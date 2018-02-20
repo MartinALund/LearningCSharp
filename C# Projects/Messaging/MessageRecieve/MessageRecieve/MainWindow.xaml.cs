@@ -42,8 +42,13 @@ namespace MessageRecieve
             {
                 try
                 {
+                    Person person = new Person();
                     var command = (Person)m.Body;
-                    builder.Append("Name: " + command.FirstName + " " + command.LastName + " age: " + command.Age +  "\n");
+
+                    person.FirstName = command.FirstName;
+                    person.LastName = command.LastName;
+                    person.Age = command.Age;
+                    builder.Append(person.ToString());
                 }
                 catch (MessageQueueException ex)
                 {
