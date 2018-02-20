@@ -1,0 +1,14 @@
+﻿<Window x:Class="MessageRecieve.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MessageRecieve"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="525">
+    <Grid>
+        <Button x:Name="getMessagesBtn" VerticalAlignment="Top" Margin="0,250,0,0" Width="200" Height="30" Content="Hent nye beskeder" Click="getMessagesBtn_Click"/>
+        <Button x:Name="deleteMessagesBtn" VerticalAlignment="Top" Margin="0,290,0,0" Width="200" Height="30" Content="Slet beskeder i kø" Click="deleteMessagesBtn_Click"/>
+        <TextBlock x:Name="messageTextBlock" VerticalAlignment="Top" Margin="0,20,0,0" Width="200" Height="200"/>
+    </Grid>
+</Window>
