@@ -1,0 +1,14 @@
+﻿Command pattern is a data driven design pattern and falls under behavioral pattern category.
+A request is wrapped under an object as command and passed to invoker object.
+Invoker object looks for the appropriate object which can handle this command,
+and passes the command to the corresponding object which executes the command.
+
+Implementation:
+I denne opgave har jeg oprettet et interface IOrder som agerer command i dette eksempel.
+Jeg har også lavet en Stock class som agerer request. 
+Der er konkrete command klasser BuyStock og SellStock som implementerer IOrder interface der laver den egentlige command processing.
+
+Der er en klasse Broker som er oprettet til at kunne tage imod ordre og placere ordre.
+Broker objektet bruger command pattern til at identificere hvilket objekt der skal udføre hvilken command baseret på hvilken type.
+
+Broker klassen demonstrerer hvordan man benytter sig af command patterns.
