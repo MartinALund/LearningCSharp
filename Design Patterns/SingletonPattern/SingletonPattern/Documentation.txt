@@ -1,0 +1,12 @@
+﻿Singleton pattern is one of the simplest design patterns.
+This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.
+
+This pattern involves a single class which is responsible to create an object while making sure that only single object gets created.
+This class provides a way to access its only object which can be accessed directly without need to instantiate the object of the class.
+
+Implementation
+For at benytte sig af Singleton pattern skal man bruge et objekt som jeg har valgt at kalde SingleObject.
+SingleObject klassen har en privat konstruktor og en static instans af sig selv.
+
+SingleObject klassen indeholder en static metode som "offentligører" sin static instans til andre klasser.
+Dette projekt viser kort hvordan man implementerer Singleton ved at bruge SingleObject klassen til at få et SinlgeOjbect objekt.

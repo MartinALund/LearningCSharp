@@ -11,7 +11,6 @@ namespace AdapterPattern
             audioPlayer.Play("mp4", "Master of Puppets.mp4");
             audioPlayer.Play("vlc", "Jurassic World.vlc");
             audioPlayer.Play("avi", "Mind me.avi");
-
             Console.ReadLine();
         }
     }

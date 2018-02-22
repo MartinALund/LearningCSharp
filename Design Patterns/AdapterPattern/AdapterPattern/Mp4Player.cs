@@ -8,7 +8,7 @@ namespace AdapterPattern
     {
         public void PlayMp4(string Filename)
         {
-            Console.WriteLine("Player mp4 file: " + Filename);
+            Console.WriteLine("Playing mp4 file: " + Filename);
         }
 
         public void PlayVlc(string Filename)

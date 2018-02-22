@@ -1,12 +1,24 @@
-﻿Adapter pattern works as a bridge between two incompatible interfaces. This type of design pattern comes under structural pattern as this pattern combines the capability of two independent interfaces.
-This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces. A real life example could be a case of card reader which acts as an adapter between memory card and a laptop. You plugin the memory card into card reader and card reader into the laptop so that memory card can be read via laptop.
-We are demonstrating use of Adapter pattern via following example in which an audio player device can play mp3 files only and wants to use an advanced audio player capable of playing vlc and mp4 files.
+﻿Adapter pattern works as a bridge between two incompatible interfaces. 
+This type of design pattern comes under structural pattern as this pattern combines the capability of two independent interfaces.
+
+This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.
+A real life example could be a case of card reader which acts as an adapter between memory card and a laptop.
+You plugin the memory card into card reader and card reader into the laptop so that memory card can be read via laptop.
+We are demonstrating use of Adapter pattern via following example in which an audio player device can play mp3 files only.
+We want to use an advanced audio player capable of playing vlc and mp4 files.
 
 Implementation
-We have a MediaPlayer interface and a concrete class AudioPlayer implementing the MediaPlayer interface. AudioPlayer can play mp3 format audio files by default.
+Vi har et MediaPlayer interface og en konkret klasse AudioPlayer som implementerer MediaPlayer interfacet.
+AudioPlayer kan kun spille mp3 format filer som standard.
 
-We are having another interface AdvancedMediaPlayer and concrete classes implementing the AdvancedMediaPlayer interface. These classes can play vlc and mp4 format files.
+Vi har et andet interface AdvancedMediaPlayer og konkrette klasser som implementerer dette interface.
+Disse klasser kan spille vlc og mp4 format filer.
 
-We want to make AudioPlayer to play other formats as well. To attain this, we have created an adapter class MediaAdapter which implements the MediaPlayer interface and uses AdvancedMediaPlayer objects to play the required format.
+Opgaven er at få AudioPlayer til at spille andre formater også. 
+For at opnå dette skal der laves en adapter klasse MediaAdapter som implementerer MediaPlayer interfacet - 
+og benytter sig af AdvancedMediaPlayer objekter for at kunne spille de påkrævede filer.
 
-AudioPlayer uses the adapter class MediaAdapter passing it the desired audio type without knowing the actual class which can play the desired format. AdapterPatternDemo, our demo class will use AudioPlayer class to play various formats.
+AudioPlayer bruger adapter klassen MediaAdapter til at videresende hvilket format filen er i - 
+uden at vide hvilken klasse der rent faktisk kan spille det ønskede format.
+
+Dette køres igennem Program som benytter AudioPlayer klassen til at spille de forskellige formater.

@@ -13,7 +13,7 @@ namespace AdapterPattern
 
         public void PlayVlc(string Filename)
         {
-            Console.WriteLine("Player vlc file: " + Filename);
+            Console.WriteLine("Playing vlc file: " + Filename);
         }
     }
 }
