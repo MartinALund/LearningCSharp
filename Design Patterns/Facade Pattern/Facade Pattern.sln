@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageRecieve", "MessageRecieve\MessageRecieve.csproj", "{7F047C53-7D45-4E74-B769-81E2010A2CEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade Pattern", "Facade Pattern\Facade Pattern.csproj", "{C1B6ECA4-10BF-43FA-8842-51742A6E4425}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7F047C53-7D45-4E74-B769-81E2010A2CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F047C53-7D45-4E74-B769-81E2010A2CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F047C53-7D45-4E74-B769-81E2010A2CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F047C53-7D45-4E74-B769-81E2010A2CEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1B6ECA4-10BF-43FA-8842-51742A6E4425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B6ECA4-10BF-43FA-8842-51742A6E4425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1B6ECA4-10BF-43FA-8842-51742A6E4425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1B6ECA4-10BF-43FA-8842-51742A6E4425}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3B58663E-FB24-4B6D-AD9C-657D695E9097}
+		SolutionGuid = {EF15606F-7281-420D-BEA9-9C854C4EF6A4}
 	EndGlobalSection
 EndGlobal
