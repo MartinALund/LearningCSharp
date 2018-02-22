@@ -1,0 +1,12 @@
+﻿Factory pattern is one of the most used design patterns. 
+
+This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.
+
+In Factory pattern, we create object without exposing the creation logic to the client
+and refer to newly created object using a common interface.
+
+
+Implementation:
+I dette eksempel laver jeg et IShape Interface og konkrete klasser som implementerer dette interface.
+Jeg opretter også en factory klasse ShapeFactory, som jeg bruger til at hente et IShape objekt.
+Ved at give ShapeFactory en string (CIRCLE // RECTANGLE // SQUARE) kan jeg hente den type af objekt der er brug for.
