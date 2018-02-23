@@ -1,0 +1,8 @@
+﻿In proxy pattern, a class represents functionality of another class. This type of design pattern comes under structural pattern.
+In proxy pattern, we create object having original object to interface its functionality to outer world.
+
+Implementation:
+Der skal lave set interface IImage, og klasser som implementerer dette.
+ProxyImage er en proxy klasse som er oprettet for at reducere brugen af memory når et RealImage objekt skal loades.
+
+Projektet bruger ProxyImage til at få et image objekt der skal loades og fremvises når der er brug for det.
