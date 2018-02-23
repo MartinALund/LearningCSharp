@@ -1,0 +1,14 @@
+﻿In Strategy pattern, a class behavior or its algorithm can be changed at run time.
+This type of design pattern comes under behavior pattern.
+
+In Strategy pattern, we create objects which represent various strategies and a context object whose behavior 
+varies as per its strategy object.
+The strategy object changes the executing algorithm of the context object.
+
+Implementation
+
+I dette projekt opretter jeg et IStrategy interface som definerer aktioner der skal bruges til de konkrete klasser som implementerer denne.
+Herefter opretter jeg en Context klasse som bruger en IStrategy.
+
+Ved at bruge Context og strategy objekter kan jeg ændre i hvordan Context skal opføre sig, alt afhængig af hvilken strategy der bliver brugt.
+
