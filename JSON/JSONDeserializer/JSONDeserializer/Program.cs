@@ -6,17 +6,7 @@ namespace JSONDeserializer
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-
-            Program program = new Program();
-            program.Run();
-
-        }
-
-        public void Run()
-        {
-            string json = @"[{
+        string json = @"[{
   'firstname':'Martin',
   'lastname':'Lund',
   'age': 26,
@@ -47,34 +37,29 @@ namespace JSONDeserializer
   ]
 }
 ]";
+        static void Main(string[] args)
+        {
 
-            DeserializeJSON(json);
+            Program program = new Program();
+            program.Run();
+
         }
 
-        private void DeserializeJSON(string JSONString)
+        public void Run()
         {
-            try
+            List<Person> people = new List<Person>();
+            people = Deserialize.GetInstance().DeserializeJSON(json, people);
+
+            Console.WriteLine(people.Count);
+            foreach (Person person in people)
             {
-                //GET A LIST OF PEOPLE
-                List<Person> people = JsonConvert.DeserializeObject<List<Person>>(JSONString);
-                foreach (Person person in people)
+                Console.WriteLine("First name: " + person.Firstname);
+                Console.WriteLine("Address: " + person.Address.Street);
+
+                foreach (var num in person.PhoneNumbers)
                 {
-                    Console.WriteLine("First name: " + person.Firstname);
-                    Console.WriteLine("Address: " + person.Address.Street);
-
-                    foreach (var num in person.PhoneNumbers)
-                    {
-                        Console.WriteLine(num.Type + " : " + num.Number);
-                    }
+                    Console.WriteLine(num.Type + " : " + num.Number);
                 }
-                //GET A SINGLE PERSON WITH JSON
-                //Person jPerson = JsonConvert.DeserializeObject<Person>(JSONString);
-
-            }
-            catch (Exception)
-            {
-
-                throw;
             }
             Console.ReadKey();
         }
