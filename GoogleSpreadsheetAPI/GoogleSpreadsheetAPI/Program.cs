@@ -19,6 +19,7 @@ namespace GoogleSpreadsheetAPI
         static string ApplicationName = "Google Sheets API .NET Quickstart";
         string spreadsheetId = "13Cf5L5s5HGmkP7QhUPkV12sUTYkAO0V7uGdU2ToiNWc";
 
+        //Convert this program to Android --> Use as shoppinglist
 
         static void Main(string[] args)
         {         
@@ -41,6 +42,7 @@ namespace GoogleSpreadsheetAPI
                 Console.WriteLine("1. Print shopping liste");
                 Console.WriteLine("2. Print ugeplan");
                 int menuSelection = int.Parse(Console.ReadLine());
+                Console.Clear();
                 switch (menuSelection)
                 {
                     case 1:
@@ -53,32 +55,23 @@ namespace GoogleSpreadsheetAPI
                 Console.WriteLine("Tryk på en vilkårlig tast for at komme tilbage");
                 Console.ReadKey();
                 Console.Clear();
-            }
-
-          
+            }         
         }
 
         public void PrintList(IList<IList<Object>> list, string columnA, string columnB)
         {
-            if (list != null && list.Count > 0)
-            {
                 Console.WriteLine(columnA + " - " + columnB);
                 foreach (var row in list)
                 {
                     // Print columns A and B, which correspond to indices 0 and 1.
                     Console.WriteLine("{0} -  {1} ", row[0], row[1]);
                 }
-            }
-            else
-            {
-                Console.WriteLine("No data found.");
-            }
         }
 
-        public IList<IList<Object>> GetValues(string Range, dynamic service)
+        public IList<IList<Object>> GetValues(string range, dynamic service)
         {          
             SpreadsheetsResource.ValuesResource.GetRequest request =
-                    service.Spreadsheets.Values.Get(spreadsheetId, Range);
+                    service.Spreadsheets.Values.Get(spreadsheetId, range);
 
             ValueRange response = request.Execute();
             return response.Values;
@@ -101,7 +94,6 @@ namespace GoogleSpreadsheetAPI
                     "user",
                     CancellationToken.None,
                     new FileDataStore(credPath, true)).Result;
-                Console.WriteLine("Credential file saved to: " + credPath);
             }
 
             // Create Google Sheets API service.
