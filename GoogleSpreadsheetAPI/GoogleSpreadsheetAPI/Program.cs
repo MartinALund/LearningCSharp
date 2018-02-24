@@ -15,12 +15,76 @@ namespace GoogleSpreadsheetAPI
 {
     class Program
     {
-        // If modifying these scopes, delete your previously saved credentials
-        // at ~/.credentials/sheets.googleapis.com-dotnet-quickstart.json
         static string[] Scopes = { SheetsService.Scope.Spreadsheets };
         static string ApplicationName = "Google Sheets API .NET Quickstart";
+        string spreadsheetId = "13Cf5L5s5HGmkP7QhUPkV12sUTYkAO0V7uGdU2ToiNWc";
+
 
         static void Main(string[] args)
+        {         
+            Program program = new Program();
+            program.Run();
+        }
+
+        public void Run()
+        {
+            var service = EstablishConnection();
+            // Define request parameters. 
+            string shoppingRange = "Shoppe!A2:B";
+            string foodPlanRange = "Ugeplan!A2:B";
+
+            IList<IList<Object>> shoppingList = GetValues(shoppingRange, service);
+            IList<IList<Object>> foodPlanList = GetValues(foodPlanRange, service);
+
+            while (true)
+            {
+                Console.WriteLine("1. Print shopping liste");
+                Console.WriteLine("2. Print ugeplan");
+                int menuSelection = int.Parse(Console.ReadLine());
+                switch (menuSelection)
+                {
+                    case 1:
+                        PrintList(shoppingList, "Produkt", "Antal");
+                        break;
+                    case 2:
+                        PrintList(foodPlanList, "Ugedag", "Menu");
+                        break;
+                }
+                Console.WriteLine("Tryk på en vilkårlig tast for at komme tilbage");
+                Console.ReadKey();
+                Console.Clear();
+            }
+
+          
+        }
+
+        public void PrintList(IList<IList<Object>> list, string columnA, string columnB)
+        {
+            if (list != null && list.Count > 0)
+            {
+                Console.WriteLine(columnA + " - " + columnB);
+                foreach (var row in list)
+                {
+                    // Print columns A and B, which correspond to indices 0 and 1.
+                    Console.WriteLine("{0} -  {1} ", row[0], row[1]);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No data found.");
+            }
+        }
+
+        public IList<IList<Object>> GetValues(string Range, dynamic service)
+        {          
+            SpreadsheetsResource.ValuesResource.GetRequest request =
+                    service.Spreadsheets.Values.Get(spreadsheetId, Range);
+
+            ValueRange response = request.Execute();
+            return response.Values;
+        }
+
+        public dynamic EstablishConnection()
         {
             UserCredential credential;
 
@@ -46,31 +110,7 @@ namespace GoogleSpreadsheetAPI
                 HttpClientInitializer = credential,
                 ApplicationName = ApplicationName,
             });
-
-            // Define request parameters.
-            String spreadsheetId = "13Cf5L5s5HGmkP7QhUPkV12sUTYkAO0V7uGdU2ToiNWc";
-            String range = "Shoppe!A2:E";
-            SpreadsheetsResource.ValuesResource.GetRequest request =
-                    service.Spreadsheets.Values.Get(spreadsheetId, range);
-
-            ValueRange response = request.Execute();
-            IList<IList<Object>> values = response.Values;
-            if (values != null && values.Count > 0)
-            {
-                Console.WriteLine("Shoppeliste, Antal");
-                foreach (var row in values)
-                {
-                    // Print columns A and E, which correspond to indices 0 and 4.
-                    Console.WriteLine("Produkt: {0} -  {1} stk", row[0], row[1]);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No data found.");
-            }
-            Console.Read();
-
-
+            return service;
         }
     }
 }
