@@ -1,0 +1,16 @@
+﻿<Window x:Class="MessageReceive.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MessageReceive"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="525">
+    <Grid>
+        <Button x:Name="getPersonMessagesBtn" VerticalAlignment="Top" Margin="0,250,0,0" Width="200" Height="30" Content="Hent person beskeder" Click="getPersonMessagesBtn_Click"/>
+        <Button x:Name="getAnotherPersonMessagesBtn" VerticalAlignment="Top" Margin="0,290,0,0" Width="200" Height="30" Content="Hent andre person beskeder" Click="getAnotherPersonMessagesBtn_Click"/>
+        <Button x:Name="deletePersonMessagesBtn" VerticalAlignment="Top" Margin="0,330,0,0" Width="200" Height="30" Content="Slet person beskeder i kø" Click="deletePersonMessagesBtn_Click"/>
+        <Button x:Name="deleteAnotherPersonMessagesBtn" VerticalAlignment="Top" Margin="0,370,0,0" Width="200" Height="30" Content="Slet another person beskeder i kø" Click="deleteAnotherPersonMessagesBtn_Click"/>
+        <TextBlock x:Name="messageTextBlock" VerticalAlignment="Top" Margin="0,20,0,0" Width="400" Height="200"/>
+    </Grid>
+</Window>
