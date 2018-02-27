@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace IotaCoinTracker
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -50,42 +50,29 @@ namespace IotaCoinTracker
             request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
 
             var response = client.Execute(request);
+            string json = response.Content;
 
-            Console.WriteLine(response.Content);
+            PrintCoinInfo(json);
 
-            GetCoins(response.Content);
+        }
+
+        public void PrintCoinInfo(string json)
+        {
+            Coin coin = GetCoin(json);
+            Console.WriteLine("Id: " + coin.Id);
+            Console.WriteLine("Name : " + coin.Name);
+            Console.WriteLine("Symbol: " + coin.Symbol);
+            Console.WriteLine("Price_USD : " + coin.Price_USD);
+            Console.WriteLine("Rank: " + coin.Rank);
             Console.ReadLine();
         }
 
-        public void GetCoins(string jsonString)
+        public Coin GetCoin(string jsonString)
         {
             List<Coin> coins = new List<Coin>();
-            coins = DeserializeJSON(jsonString, coins);
-
-            Console.WriteLine(coins.Count);
-            foreach (Coin item in coins)
-            {
-                Console.WriteLine("Id: " + item.Id);
-                Console.WriteLine("Name : " + item.Rank);
-
-            }
-            Console.ReadKey();
-        }
-
-        public List<Coin> DeserializeJSON(string JSONString, List<Coin> coins)
-        {
-            try
-            {
-                coins = JsonConvert.DeserializeObject<List<Coin>>(JSONString);
-                Console.WriteLine(coins.Count);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            return coins;
+            JsonDeserializer jsonDeserializer = new JsonDeserializer();
+            coins = jsonDeserializer.DeserializeJSON(jsonString, coins);
+            return coins[0];
         }
     }
-
 }
