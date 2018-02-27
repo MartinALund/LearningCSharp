@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IotaCoinTracker", "IotaCoinTracker\IotaCoinTracker.csproj", "{5073C22C-1CE3-4094-B71D-8269FA3BB458}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5073C22C-1CE3-4094-B71D-8269FA3BB458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5073C22C-1CE3-4094-B71D-8269FA3BB458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5073C22C-1CE3-4094-B71D-8269FA3BB458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5073C22C-1CE3-4094-B71D-8269FA3BB458}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27F29507-3447-45CE-BCB3-21B78B57B77B}
+	EndGlobalSection
+EndGlobal
