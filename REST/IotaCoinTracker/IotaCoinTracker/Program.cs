@@ -17,48 +17,32 @@ namespace IotaCoinTracker
 
         public void Run()
         {
-            Console.WriteLine("Please make a selection");
-            Console.WriteLine("1. Bitcoin");
-            Console.WriteLine("2. Ethereum");
-            Console.WriteLine("3. Iota");
-            Console.WriteLine("4. Litecoin");
-            int selection = int.Parse(Console.ReadLine());
-            RestClient client = new RestClient("https://api.coinmarketcap.com/v1/ticker");
-            RestRequest request = new RestRequest( Method.GET);
-            string coinType = "";
-            switch (selection)
+            while (true)
             {
-                case 1:
-                    coinType = "bitcoin";
-                    request.Resource = "/{coinType}/";
-                    request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
-                    break;
-                case 2:
-                    coinType = "ethereum";
-                    request.Resource = "/{coinType}/";
-                    request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
-                    break;
-                case 3:
-                    coinType = "iota";
-                    request.Resource = "/{coinType}/";
-                    request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
-                    break;
-                case 4:
-                    coinType = "litecoin";
-                    request.Resource = "/{coinType}/";
-                    request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
-                    break;
-                default:
-                    coinType = "";
-                    break;
-            }
-            //https://api.coinmarketcap.com/v1/ticker - alm api
-            //https://api.coinmarketcap.com/v1/ticker/{cointype}/ - ny api med parameter
-            //https://api.coinmarketcap.com/v1/ticker/iota - eksempel
+                Console.Clear();
+                Console.Write("Enter name of coin: ");
+                Console.WriteLine("Enter all to display every coin available");
 
-            var response = client.Execute(request);       
-            string json = response.Content;
-            PrintCoinInfo(json);
+                string coinType = Console.ReadLine().ToLower();
+
+                RestClient client = new RestClient("https://api.coinmarketcap.com/v1/ticker");
+                RestRequest request = new RestRequest(Method.GET);
+                //https://api.coinmarketcap.com/v1/ticker - alm api
+                //https://api.coinmarketcap.com/v1/ticker/{cointype}/ - ny api med parameter
+                //https://api.coinmarketcap.com/v1/ticker/iota - eksempel
+
+                if (!coinType.Equals("all"))
+                {
+
+                    request.Resource = "/{coinType}/";
+                    request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
+                }
+
+                var response = client.Execute(request);
+                string json = response.Content;
+                PrintCoinInfo(json);
+            }
+
         }
 
         public void PrintCoinInfo(string json)

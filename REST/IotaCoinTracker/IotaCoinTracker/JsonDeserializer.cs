@@ -15,8 +15,7 @@ namespace IotaCoinTracker
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-                throw;
+                Console.WriteLine("Mønten blev ikke fundet! Prøv igen");
             }
             return coins;
         }
