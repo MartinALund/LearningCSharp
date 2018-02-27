@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Xml;
 
 namespace IotaCoinTracker
 {
@@ -50,10 +51,9 @@ namespace IotaCoinTracker
             request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
 
             var response = client.Execute(request);
+            
             string json = response.Content;
-
             PrintCoinInfo(json);
-
         }
 
         public void PrintCoinInfo(string json)
@@ -62,8 +62,10 @@ namespace IotaCoinTracker
             Console.WriteLine("Id: " + coin.Id);
             Console.WriteLine("Name : " + coin.Name);
             Console.WriteLine("Symbol: " + coin.Symbol);
-            Console.WriteLine("Price_USD : " + coin.Price_USD);
             Console.WriteLine("Rank: " + coin.Rank);
+            Console.WriteLine("Price_USD : " + coin.Price_USD);
+            Console.WriteLine();
+            Console.WriteLine(coin.ToString());
             Console.ReadLine();
         }
 
