@@ -14,7 +14,7 @@ namespace IotaCoinTracker
 
         public override string ToString()
         {
-            return Name + " currently ranked at: " + Rank + " with current price of: " + Price_USD;
+            return Name + " currently ranked at: " + Rank + " with current price of: " + Price_USD + " $";
         }
     }
 }

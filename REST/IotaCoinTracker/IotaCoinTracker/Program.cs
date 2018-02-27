@@ -30,15 +30,23 @@ namespace IotaCoinTracker
             {
                 case 1:
                     coinType = "bitcoin";
+                    request.Resource = "/{coinType}/";
+                    request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
                     break;
                 case 2:
                     coinType = "ethereum";
+                    request.Resource = "/{coinType}/";
+                    request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
                     break;
                 case 3:
                     coinType = "iota";
+                    request.Resource = "/{coinType}/";
+                    request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
                     break;
                 case 4:
                     coinType = "litecoin";
+                    request.Resource = "/{coinType}/";
+                    request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
                     break;
                 default:
                     coinType = "";
@@ -47,34 +55,34 @@ namespace IotaCoinTracker
             //https://api.coinmarketcap.com/v1/ticker - alm api
             //https://api.coinmarketcap.com/v1/ticker/{cointype}/ - ny api med parameter
             //https://api.coinmarketcap.com/v1/ticker/iota - eksempel
-            request.Resource = "/{coinType}/";
-            request.AddParameter("coinType", coinType, ParameterType.UrlSegment);
 
-            var response = client.Execute(request);
-            
+            var response = client.Execute(request);       
             string json = response.Content;
             PrintCoinInfo(json);
         }
 
         public void PrintCoinInfo(string json)
         {
-            Coin coin = GetCoin(json);
-            Console.WriteLine("Id: " + coin.Id);
-            Console.WriteLine("Name : " + coin.Name);
-            Console.WriteLine("Symbol: " + coin.Symbol);
-            Console.WriteLine("Rank: " + coin.Rank);
-            Console.WriteLine("Price_USD : " + coin.Price_USD);
-            Console.WriteLine();
-            Console.WriteLine(coin.ToString());
+            List<Coin> coins = GetCoins(json);
+            foreach (Coin coin in coins)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Id: " + coin.Id);
+                Console.WriteLine("Name : " + coin.Name);
+                Console.WriteLine("Symbol: " + coin.Symbol);
+                Console.WriteLine("Rank: " + coin.Rank);
+                Console.WriteLine("Price_USD : " + coin.Price_USD + " $");               
+                Console.WriteLine(coin.ToString());
+            }
             Console.ReadLine();
         }
 
-        public Coin GetCoin(string jsonString)
+        public List<Coin> GetCoins(string jsonString)
         {
             List<Coin> coins = new List<Coin>();
             JsonDeserializer jsonDeserializer = new JsonDeserializer();
             coins = jsonDeserializer.DeserializeJSON(jsonString, coins);
-            return coins[0];
+            return coins;
         }
     }
 }
