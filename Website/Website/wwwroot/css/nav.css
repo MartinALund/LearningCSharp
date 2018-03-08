@@ -1,8 +1,7 @@
 ﻿
 .container {
-    width: 95%;
+    width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
 }
 
 header {
@@ -11,7 +10,6 @@ header {
     padding: 1em;
     position: relative;
 }
-
 
 .logo {
     float: left;
@@ -28,7 +26,7 @@ header {
     right: 0%;
     background: #1c1c1e;
     clip-path: circle(0px at top right);
-    transition: clip-path ease-in-out 500ms;
+    transition: clip-path ease-in-out 650ms;
 }
 
 .site-nav--open {
@@ -42,9 +40,8 @@ header {
 }
 
 .site-nav li {
-    border-bottom: 1px solid #575766;
+    border-bottom: 1px solid #e9ebee;
 }
-
     .site-nav li:last-child {
         border-bottom: none;
     }
@@ -59,7 +56,6 @@ header {
 
     .site-nav a:hover,
     .site-nav a:focus {
-        background: #f88118;
         color: #e9ebee;
     }
 
@@ -67,8 +63,8 @@ header {
 .menu-toggle {
     padding: 1em;
     position: absolute;
-    top: .5em;
     right: .5em;
+    top: .5em;
     cursor: pointer;
 }
 
@@ -81,7 +77,7 @@ header {
     height: 3px;
     width: 1.75em;
     border-radius: 3px;
-    transition: all ease-in-out 250ms;
+    transition: all ease-in-out 700ms;
 }
 
     .hamburger::before {
@@ -125,7 +121,7 @@ header {
 
         .site-nav a {
             padding: 0;
-            margin-left: 3em;
+            margin-left: 3.5em;
         }
 
             .site-nav a:hover,
@@ -136,4 +132,12 @@ header {
     .site-nav--icon {
         display: none;
     }
+}
+
+
+footer {
+    background: #1c1c1e;
+    color: #f88118;
+    padding: 1em;
+    position: relative;
 }

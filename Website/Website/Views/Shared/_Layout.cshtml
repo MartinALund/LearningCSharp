@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet">
 
+
+
     <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
           asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
           asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
@@ -33,10 +35,17 @@
         </div>
     </header>
 
-
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <footer>
+            <ul class="list-unstyled list-inline text-center">
+                <li><p>Martin Lund</p></li>
+                <li><p>Computer scientist</p></li>
+                <li><p>C# Enthusiast</p></li>
+                <li><p>Android hobbyist</p></li>
+            </ul>
+        </footer>
     </div>
 
     <environment include="Development">
