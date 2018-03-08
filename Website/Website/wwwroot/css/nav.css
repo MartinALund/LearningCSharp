@@ -1,0 +1,139 @@
+﻿
+.container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    background: #1c1c1e;
+    color: #f88118;
+    padding: 1em;
+    position: relative;
+}
+
+
+.logo {
+    float: left;
+    font-size: 2rem;
+    margin: 0;
+    color: #f88118;
+    text-transform: uppercase;
+    font-family: 'Krona One', sans-serif;
+}
+
+.site-nav {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background: #1c1c1e;
+    clip-path: circle(0px at top right);
+    transition: clip-path ease-in-out 500ms;
+}
+
+.site-nav--open {
+    clip-path: circle(250% at top right);
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav li {
+    border-bottom: 1px solid #575766;
+}
+
+    .site-nav li:last-child {
+        border-bottom: none;
+    }
+
+.site-nav a {
+    color: #f88118;
+    display: block;
+    padding: 2em 4em 2em 1.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+    .site-nav a:hover,
+    .site-nav a:focus {
+        background: #f88118;
+        color: #e9ebee;
+    }
+
+
+.menu-toggle {
+    padding: 1em;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    background: #f88118;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 250ms;
+}
+
+    .hamburger::before {
+        transform: translateY(-6px);
+    }
+
+    .hamburger::after {
+        transform: translateY(3px);
+    }
+
+.open .hamburger {
+    transform: rotate(45deg);
+}
+
+    .open .hamburger::before {
+        opacity: 0;
+    }
+
+    .open .hamburger::after {
+        transform: translateY(-3px) rotate(-90deg);
+    }
+
+@media (min-width: 700px) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .site-nav {
+        height: auto;
+        position: relative;
+        background: transparent;
+        float: right;
+        clip-path: initial;
+    }
+
+        .site-nav li {
+            display: inline-block;
+            border: none;
+        }
+
+        .site-nav a {
+            padding: 0;
+            margin-left: 3em;
+        }
+
+            .site-nav a:hover,
+            .site-nav a:focus {
+                background: transparent;
+            }
+
+    .site-nav--icon {
+        display: none;
+    }
+}
