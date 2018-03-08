@@ -14,11 +14,26 @@
 
 
 <body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Generico<span>Logo</span></h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Index</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </div>
+    </header>
 
-    <h1>HEJ</h1>
+
     <div class="container body-content">
         @RenderBody()
-        <hr/>
+        <hr />
     </div>
 
     <environment include="Development">
@@ -43,5 +58,15 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
+
+    <script type="text/javascript">
+        $('.menu-toggle').click(function () {
+
+            $('.site-nav').toggleClass('site-nav--open', 1500);
+            $(this).toggleClass('open');
+
+        })
+
+    </script>
 </body>
 </html>
