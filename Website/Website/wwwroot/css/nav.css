@@ -57,6 +57,7 @@ header {
     .site-nav a:hover,
     .site-nav a:focus {
         color: #e9ebee;
+        transition: 300ms ease-in;
     }
 
 
