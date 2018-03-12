@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ReadFromTxt
 {
-    public class Datatime
+    public class CustomDateTime
     {
         public int Year { get; set; }
         public int Month { get; set; }
@@ -14,24 +14,15 @@ namespace ReadFromTxt
         public string Minutes { get; set; }
         public int Seconds { get; set; }
 
-        public Datatime(string input)
+        public CustomDateTime(string input)
         {
-            DateTime dDate;
-
-            if (DateTime.TryParse(input, out dDate))
-            {
                 DateTime inputDate = DateTime.Parse(input);
                 Year = inputDate.Year;
                 Month = inputDate.Month;
                 Day = inputDate.Day;
                 Hour = inputDate.Hour;
                 Minutes = inputDate.Minute.ToString("D2");
-                Seconds = inputDate.Second;
-            }
-            else
-            {
-                Console.WriteLine("Invalid date");
-            }             
+                Seconds = inputDate.Second;          
         }
 
         public override string ToString()

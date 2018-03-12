@@ -6,20 +6,27 @@ namespace ReadFromTxt
 {
     class Program
     {
+       
         static void Main(string[] args)
         {
-            string[] lines = File.ReadAllLines(@"C:\Users\the_t\Desktop\Projekter\LearningCSharp\ReadFromTxt\ReadFromTxt\data.txt");
-            List<CustomDateTime> dates = new List<CustomDateTime>();
-            foreach (string line in lines)
+            Program program = new Program();
+            program.Run();
+        }
+
+        private void Run()
+        {
+            string path = @"C:\Users\the_t\Desktop\Projekter\LearningCSharp\ReadFromTxt\ReadFromTxt\data.txt";
+            Data data = new Data(path);
+            data.GetAllData();
+
+            foreach (var item in data.GetDataFromOneDay("2017-06-01"))
             {
-                CustomDateTime datatime = new CustomDateTime(line);
-                dates.Add(datatime);
+                Console.WriteLine(item);
             }
-            foreach (CustomDateTime date in dates)
-            {
-                Console.WriteLine(date.ToString());
-            }
+
+            data.GetAmountPrHour("2017-03-01");
             Console.ReadKey();
         }
+
     }
 }
