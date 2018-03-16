@@ -40,5 +40,19 @@ namespace WebAPI.Controllers
             }
             return new ObjectResult(item);
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] TodoItem item)
+        {
+            if (item == null) 
+            {
+                return BadRequest();
+            }
+
+            todoContext.TodoItems.Add(item);
+            todoContext.SaveChanges();
+
+            return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
+        }
     }
 }
