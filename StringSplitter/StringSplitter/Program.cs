@@ -15,10 +15,10 @@ namespace StringSplitter
             string text = System.IO.File.ReadAllText(@"..\..\..\website-data.txt");
             string[] dataArray = text.Split('.');
             StringBuilder builder = new StringBuilder();
-            builder.Append("<div class\"body-content\">\n");
+            builder.Append("<section class=\"introduction-section\">\n");
             foreach (var item in dataArray)
             {
-                if (item.Length > 1)
+                if (item.Length > 5)
                 {
                     builder.Append("\t<p>");
                     builder.Append(item.Trim() + ".");
@@ -26,7 +26,7 @@ namespace StringSplitter
                     builder.Append(Environment.NewLine);
                 }
             }
-            builder.Append("</div>");
+            builder.Append("</section>");
             Clipboard.SetText(builder.ToString());
             Console.WriteLine(builder.ToString());
             Console.ForegroundColor = ConsoleColor.Green;
