@@ -12,19 +12,21 @@ namespace StringSplitter
         [STAThread]
         static void Main(string[] args)
         {
-            string data = "String splitter. På punktum. Hver paragraph bliver indskudt i et <p> tag.";
-            string[] dataArray = data.Split('.');
+            string text = System.IO.File.ReadAllText(@"..\..\..\website-data.txt");
+            string[] dataArray = text.Split('.');
             StringBuilder builder = new StringBuilder();
+            builder.Append("<div class\"body-content\">\n");
             foreach (var item in dataArray)
             {
                 if (item.Length > 1)
                 {
-                    builder.Append("<p>");
+                    builder.Append("\t<p>");
                     builder.Append(item.Trim() + ".");
                     builder.Append("</p>");
                     builder.Append(Environment.NewLine);
                 }
             }
+            builder.Append("</div>");
             Clipboard.SetText(builder.ToString());
             Console.WriteLine(builder.ToString());
             Console.ForegroundColor = ConsoleColor.Green;
