@@ -36,6 +36,23 @@ namespace StringShuffler
                     Console.WriteLine($"Correct! It took you {tries} tries");
                     return;
                 }
+                else
+                {
+                    if (tries <= word.Length)
+                    {
+                        Console.WriteLine("Wrong! Try again with these hints: ");
+                        for (int i = 0; i < tries; i++)
+                        {
+                            Console.Write(word[i]);
+                        }
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("No more hints!");
+                    }
+
+                }
             }
 
 
