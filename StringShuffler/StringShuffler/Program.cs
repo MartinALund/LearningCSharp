@@ -36,26 +36,20 @@ namespace StringShuffler
                     Console.WriteLine($"Correct! It took you {tries} tries");
                     return;
                 }
-                else
+                else if (tries < word.Length)
                 {
-                    if (tries <= word.Length)
+                    Console.Clear();
+                    Console.WriteLine(shuffledWord);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Wrong! Try again with these hints: ");
+                    Console.ResetColor();
+                    for (int i = 0; i < tries; i++)
                     {
-                        Console.WriteLine("Wrong! Try again with these hints: ");
-                        for (int i = 0; i < tries; i++)
-                        {
-                            Console.Write(word[i]);
-                        }
-                        Console.WriteLine();
+                        Console.Write(word[i]);
                     }
-                    else
-                    {
-                        Console.WriteLine("No more hints!");
-                    }
-
-                }
+                    Console.WriteLine();
+                }             
             }
-
-
         }
 
         private string Shuffle(string str)
