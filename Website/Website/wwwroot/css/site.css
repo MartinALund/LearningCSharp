@@ -44,3 +44,12 @@
     transform: rotateY(180deg);
     background-color:red;
 }
+
+.nested-div{
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:5px;
+    margin-bottom:5px;
+    border: double 1px #000000;
+    text-align:center;
+}
