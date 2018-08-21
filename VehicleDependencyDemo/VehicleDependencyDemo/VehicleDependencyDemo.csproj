@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{127B46B8-EC74-4ED6-A90E-4F3D2A4ECBFC}</ProjectGuid>
+    <ProjectGuid>{40DC0508-87CD-4EDE-B264-BFC37661A63D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DependencyInjectionDemo</RootNamespace>
-    <AssemblyName>DependencyInjectionDemo</AssemblyName>
+    <RootNamespace>VehicleDependencyDemo</RootNamespace>
+    <AssemblyName>VehicleDependencyDemo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -66,16 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer.cs" />
-    <Compile Include="Hello.cs" />
-    <Compile Include="ICustomer.cs" />
-    <Compile Include="IHello.cs" />
-    <Compile Include="IItem.cs" />
-    <Compile Include="IMedarbejder.cs" />
-    <Compile Include="IOrder.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Medarbejder.cs" />
-    <Compile Include="Order.cs" />
+    <Compile Include="IVehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
