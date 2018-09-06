@@ -10,6 +10,22 @@ namespace SQLCryptoCurrency
 {
     public class UserDatabase
     {
+
+        public void LinqConnect(User user)
+        {
+            string connectionString = @"Data Source=LAPTOP-6HUM6MNH;Initial Catalog=cryptocurrency;User ID=admin;Password=admin";
+            LinqToSQLDataContext db = new LinqToSQLDataContext(connectionString);
+            db.Users.InsertOnSubmit(user);
+            db.SubmitChanges();
+        }
+
+        public User GetUser()
+        {
+            string connectionString = @"Data Source=LAPTOP-6HUM6MNH;Initial Catalog=cryptocurrency;User ID=admin;Password=admin";
+            LinqToSQLDataContext db = new LinqToSQLDataContext(connectionString);
+            return null;
+        }
+
         public SqlConnection ConnectToDatabase()
         {
             string connectionString;

@@ -24,20 +24,22 @@ namespace SQLCryptoCurrency
     {
         User user;
         UserDatabase userDB = new UserDatabase();
+        LinqToSQLDatabaseHandler linqToSQLDatabaseHandler = new LinqToSQLDatabaseHandler();
         public MainWindow()
         {
             InitializeComponent();
             user = new User
             {
-                Username = "Test 2",
-                Firstname = "Yaaas",
-                Lastname = "Tasasd"
+                Username = "LINQOVICH",
+                Firstname = "ADO",
+                Lastname = "SQL"
             };
         }
 
         private void BtnAddUser_Click(object sender, RoutedEventArgs e)
         {
-            userDB.InsertIntoDatabase(user);
+            User fetchedUser = linqToSQLDatabaseHandler.GetUser("Matterix");
+            MessageBox.Show(fetchedUser.Firstname);
         }
     }
 }
