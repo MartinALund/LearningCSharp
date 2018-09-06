@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SQLCryptoCurrency
 {
-    public class SqlHandler
+    public class UserDatabase
     {
         public SqlConnection ConnectToDatabase()
         {
@@ -19,7 +19,7 @@ namespace SQLCryptoCurrency
             return connection;
         }
 
-        public void InsertIntoUserDatabase(User user)
+        public void InsertIntoDatabase(User user)
         {
             SqlConnection connection = ConnectToDatabase();
             SqlCommand command;

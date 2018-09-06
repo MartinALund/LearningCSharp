@@ -23,7 +23,7 @@ namespace SQLCryptoCurrency
     public partial class MainWindow : Window
     {
         User user;
-        SqlHandler sqlHandler = new SqlHandler();
+        UserDatabase userDB = new UserDatabase();
         public MainWindow()
         {
             InitializeComponent();
@@ -33,12 +33,11 @@ namespace SQLCryptoCurrency
                 Firstname = "Yaaas",
                 Lastname = "Tasasd"
             };
-
         }
 
         private void BtnAddUser_Click(object sender, RoutedEventArgs e)
         {
-            sqlHandler.InsertIntoUserDatabase(user);
+            userDB.InsertIntoDatabase(user);
         }
     }
 }
