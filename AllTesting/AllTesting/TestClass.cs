@@ -15,12 +15,6 @@ namespace AllTesting
         {
             Assert.Equal(4, Add(2, 2));
         }
-
-        [Fact]
-        void NegativeTest()
-        {
-            Assert.Equal(4, Add(2, 3));
-        }
    
 
         int Add(int a, int b)
