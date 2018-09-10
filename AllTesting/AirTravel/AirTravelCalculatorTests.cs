@@ -37,73 +37,73 @@ namespace AirTravel
         [Theory]
         [InlineData(2, 3)]
         [InlineData(3, 3)]
-        public void Discount3Pct_WhenTwoOrThreeTravelers(int amountOfTravelers, double expectedDiscount)
+        public void Discount3Pct_WhenTwoOrThreeTravelers(int amountOfTravelers, double expectedDiscountPercentage)
         {
             var sut = new AirTravelCalculator();
 
-            var actualDiscount = sut.CalculateDiscount(amountOfTravelers);
+            var actualDiscountPercentage = sut.CalculateDiscount(amountOfTravelers);
 
-            Assert.Equal(expectedDiscount, actualDiscount);
+            Assert.Equal(expectedDiscountPercentage, actualDiscountPercentage);
         }
 
         [Theory]
         [InlineData(4, 4)]
         [InlineData(5, 4)]
-        public void Discount4Pct_WhenFourOrFiveTravelers(int amountOfTravelers, double expectedDiscount)
+        public void Discount4Pct_WhenFourOrFiveTravelers(int amountOfTravelers, double expectedDiscountPercentage)
         {
             var sut = new AirTravelCalculator();
 
-            var actualDiscount = sut.CalculateDiscount(amountOfTravelers);
+            var actualDiscountPercentage = sut.CalculateDiscount(amountOfTravelers);
 
-            Assert.Equal(expectedDiscount, actualDiscount);
+            Assert.Equal(expectedDiscountPercentage, actualDiscountPercentage);
         }
 
         [Theory]
         [InlineData(6, 5)]
         [InlineData(10, 5)]
         [InlineData(100, 5)]
-        public void Discount5Pct_WhenGreaterThanFiveTravelers(int amountOfTravelers, double expectedDiscount)
+        public void Discount5Pct_WhenGreaterThanFiveTravelers(int amountOfTravelers, double expectedDiscountPercentage)
         {
             var sut = new AirTravelCalculator();
 
-            var actualDiscount = sut.CalculateDiscount(amountOfTravelers);
+            var actualDiscountPercentage = sut.CalculateDiscount(amountOfTravelers);
 
-            Assert.Equal(expectedDiscount, actualDiscount);
+            Assert.Equal(expectedDiscountPercentage, actualDiscountPercentage);
         }
 
         [Theory]
         [InlineData(1, 0)]
-        public void NoDiscount_WhenSinglePersonBooksFlight(int amountOfTravelers, double expectedDiscount)
+        public void NoDiscount_WhenSinglePersonBooksFlight(int amountOfTravelers, double expectedDiscountPercentage)
         {
             var sut = new AirTravelCalculator();
 
-            var actualDiscount = sut.CalculateDiscount(amountOfTravelers);
+            var actualDiscountPercentage = sut.CalculateDiscount(amountOfTravelers);
 
-            Assert.Equal(expectedDiscount, actualDiscount);
+            Assert.Equal(expectedDiscountPercentage, actualDiscountPercentage);
         }
 
         [Theory]
         [InlineData(1, true, 5)]
-        public void Discount5Pct_WhenSinglePersonBooksReturnFlight(int amountOfTravelers, bool isReturnFlightBooked, double expectedDiscount)
+        public void Discount5Pct_WhenSinglePersonBooksReturnFlight(int amountOfTravelers, bool isReturnFlightBooked, double expectedDiscountPercentage)
         {
             var sut = new AirTravelCalculator();
 
-            var actualDiscount = sut.CalculateDiscount(amountOfTravelers, isReturnFlightBooked);
+            var actualDiscountPercentage = sut.CalculateDiscount(amountOfTravelers, isReturnFlightBooked);
 
-            Assert.Equal(expectedDiscount, actualDiscount);
+            Assert.Equal(expectedDiscountPercentage, actualDiscountPercentage);
         }
 
         [Theory]
         [InlineData(6,true,10)]
         [InlineData(10, true, 10)]
         [InlineData(1000,true,10)]
-        public void Discount10Pct_WhenGroupOfSixOrMoreBooksReturnFlight(int amountOfTravelers, bool isReturnFlightBooked, double expectedDiscount)
+        public void Discount10Pct_WhenGroupOfSixOrMoreBooksReturnFlight(int amountOfTravelers, bool isReturnFlightBooked, double expectedDiscountPercentage)
         {
             var sut = new AirTravelCalculator();
 
-            var actualDiscount = sut.CalculateDiscount(amountOfTravelers, isReturnFlightBooked);
+            var actualDiscountPercentage = sut.CalculateDiscount(amountOfTravelers, isReturnFlightBooked);
 
-            Assert.Equal(expectedDiscount, actualDiscount);
+            Assert.Equal(expectedDiscountPercentage, actualDiscountPercentage);
         }
 
 
