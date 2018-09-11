@@ -16,7 +16,7 @@ namespace SQLCryptoCurrency
             connection = new SqlConnection(connectionString);
         }
 
-        public User GetUser(string username)
+        public User GetUser(string username, string password)
         {
             throw new NotImplementedException(); 
         }

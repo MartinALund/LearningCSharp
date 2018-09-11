@@ -11,7 +11,7 @@ namespace SQLCryptoCurrency
 
         void ConnectToDatabase();
         void InsertIntoUserDatabase(User user);
-        User GetUser(string username);
+        User GetUser(string username, string password);
 
     }
 }

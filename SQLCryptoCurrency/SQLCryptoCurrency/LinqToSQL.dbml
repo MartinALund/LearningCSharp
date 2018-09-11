@@ -12,6 +12,18 @@
       <Association Name="CryptoCoin_UserCoin" Member="UserCoins" ThisKey="CoinName" OtherKey="CoinName" Type="UserCoin" />
     </Type>
   </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FailedLoginAttempts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="User_UserCoin" Member="UserCoins" ThisKey="ID" OtherKey="UserID" Type="UserCoin" />
+    </Type>
+  </Table>
   <Table Name="dbo.UserCoins" Member="UserCoins">
     <Type Name="UserCoin">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -20,15 +32,6 @@
       <Column Name="Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="CryptoCoin_UserCoin" Member="CryptoCoin" ThisKey="CoinName" OtherKey="CoinName" Type="CryptoCoin" IsForeignKey="true" />
       <Association Name="User_UserCoin" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Users" Member="Users">
-    <Type Name="User">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Username" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="User_UserCoin" Member="UserCoins" ThisKey="ID" OtherKey="UserID" Type="UserCoin" />
     </Type>
   </Table>
 </Database>

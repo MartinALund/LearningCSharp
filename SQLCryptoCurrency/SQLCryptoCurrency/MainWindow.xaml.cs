@@ -38,8 +38,7 @@ namespace SQLCryptoCurrency
 
         private void BtnAddUser_Click(object sender, RoutedEventArgs e)
         {
-            User fetchedUser = linqToSQLDatabaseHandler.GetUser("Matterix");
-            MessageBox.Show(fetchedUser.Firstname);
+
         }
     }
 }
