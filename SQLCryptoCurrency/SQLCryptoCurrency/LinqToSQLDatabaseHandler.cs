@@ -15,10 +15,10 @@ namespace SQLCryptoCurrency
             db = new LinqToSQLDataContext(connectionString);
         }
 
-        public User GetUser(string username, string password)
+        public User GetUser(string username)
         {
             ConnectToDatabase();
-            User user = db.Users.FirstOrDefault(e => e.Username.Equals(username) && e.Password.Equals(password));
+            User user = db.Users.FirstOrDefault(e => e.Username.Equals(username));
             return user;
         }
 

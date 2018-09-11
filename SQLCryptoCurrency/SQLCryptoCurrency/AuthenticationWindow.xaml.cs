@@ -27,19 +27,28 @@ namespace SQLCryptoCurrency
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            // Tilføj auth her!
+        {          
             string username = tbUsername.Text;
             string password = tbPassword.Text;
-            User fetchedUser = linqToSQLDatabaseHandler.GetUser(username, password);
+
+            User fetchedUser = linqToSQLDatabaseHandler.GetUser(username);
             if (fetchedUser != null)
             {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
+                if(BCrypt.Net.BCrypt.Verify(password, fetchedUser.Password))
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    // Wrong password!
+                    MessageBox.Show("Wrong information entered, try again!");
+                }
             }
             else
             {
+                //Wrong username!
                 MessageBox.Show("Wrong information entered, try again!");
             }
         }

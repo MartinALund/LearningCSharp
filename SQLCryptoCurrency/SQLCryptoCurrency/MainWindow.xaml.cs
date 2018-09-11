@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SQLCryptoCurrency.Models;
+using BCrypt.Net;
 
 namespace SQLCryptoCurrency
 {
@@ -30,15 +31,19 @@ namespace SQLCryptoCurrency
             InitializeComponent();
             user = new User
             {
-                Username = "LINQOVICH",
-                Firstname = "ADO",
-                Lastname = "SQL"
+                Username = "Testbruger",
+                Firstname = "Test",
+                Lastname = "Bruger",
+                Password = "test1234",
+                Email = "test@test.dk",
+                FailedLoginAttempts = 0
             };
         }
 
         private void BtnAddUser_Click(object sender, RoutedEventArgs e)
         {
-
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            linqToSQLDatabaseHandler.InsertIntoUserDatabase(user); 
         }
     }
 }
