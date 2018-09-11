@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParkConsole", "SmartParkConsole\SmartParkConsole.csproj", "{4329E118-2476-40A5-A780-93A8938E9E2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParkdll", "SmartParkdll\SmartParkdll.csproj", "{10BA0357-CC90-4A02-9708-E296AF63A0F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4329E118-2476-40A5-A780-93A8938E9E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4329E118-2476-40A5-A780-93A8938E9E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4329E118-2476-40A5-A780-93A8938E9E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4329E118-2476-40A5-A780-93A8938E9E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10BA0357-CC90-4A02-9708-E296AF63A0F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10BA0357-CC90-4A02-9708-E296AF63A0F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10BA0357-CC90-4A02-9708-E296AF63A0F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10BA0357-CC90-4A02-9708-E296AF63A0F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B07E2B73-6D87-4090-A33F-089149A00A97}
+	EndGlobalSection
+EndGlobal
