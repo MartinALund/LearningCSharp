@@ -8,6 +8,8 @@ namespace HousePurchase
 {
     class HousePriceCalculator : IHousePriceCalculator
     {
+        int monthsInAYear = 12;
+
         public double CalculateDownPaymentOnHouse(double housePrice, double percentageNeeded)
         {
             double amountNeededToBuyHouse = (housePrice / 100) * percentageNeeded;
@@ -17,7 +19,7 @@ namespace HousePurchase
 
         public double CalculateEstimatedHouseLoanAvailable(double monthlyIncome, double approximateMultiplier)
         {
-            double yearlyIncome = monthlyIncome * 12;
+            double yearlyIncome = monthlyIncome * monthsInAYear;
 
             double approximateHousePurchaseAmount = yearlyIncome * approximateMultiplier;
 
