@@ -2,36 +2,36 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LinqToSQL">
   <DataContextMoniker Name="/LinqToSQLDataContext" />
   <nestedChildShapes>
-    <classShape Id="c565bcfd-8909-455b-822a-0a3091ea6932" absoluteBounds="0.75, 4.625, 2, 2.1554996744791666">
+    <classShape Id="fb14394b-19dd-4e23-bc94-7b8c88843960" absoluteBounds="0.75, 0.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/LinqToSQLDataContext/CryptoCoin" />
       <nestedChildShapes>
-        <elementListCompartment Id="55be6285-f246-454f-abcf-73bbed5ce443" absoluteBounds="0.765, 5.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="53f4c5ff-11c6-4ee2-9a92-d39bb36fa817" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="696b6632-3e67-4482-baf4-4d4751ae220a" absoluteBounds="3.5, 0.875, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/LinqToSQLDataContext/UserCoin" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8b6ac752-96f0-4dd6-b0da-78d7ebfea2fd" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="383ab352-cc01-4ddb-a794-4b2286b47158" absoluteBounds="0.75, 0.875, 2, 1.5785953776041664">
+    <classShape Id="12ec368a-f019-41b4-9f09-50e3a126469d" absoluteBounds="0.75, 4.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/LinqToSQLDataContext/User" />
       <nestedChildShapes>
-        <elementListCompartment Id="ab25a927-e921-4215-8c4d-a76f4ee7193f" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="15a075ad-f55c-4dce-89b9-28f794f86b13" absoluteBounds="0.765, 5.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 5.70274983723958); (4.5 : 5.70274983723958); (4.5 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <classShape Id="46d0b358-7e49-490e-8a66-29c5dea0f858" absoluteBounds="3.5, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LinqToSQLDataContext/UserCoin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00f829b7-0d46-490e-bc7b-92377444bea6" absoluteBounds="3.515, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.03929768880208); (3.5 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LinqToSQLDataContext/CryptoCoin/CryptoCoin_UserCoin" />
       <nodes>
-        <classShapeMoniker Id="c565bcfd-8909-455b-822a-0a3091ea6932" />
-        <classShapeMoniker Id="696b6632-3e67-4482-baf4-4d4751ae220a" />
+        <classShapeMoniker Id="fb14394b-19dd-4e23-bc94-7b8c88843960" />
+        <classShapeMoniker Id="46d0b358-7e49-490e-8a66-29c5dea0f858" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.66429768880208); (3.5 : 1.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 5.95274983723958); (4.5 : 5.95274983723958); (4.5 : 2.82859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LinqToSQLDataContext/User/User_UserCoin" />
       <nodes>
-        <classShapeMoniker Id="383ab352-cc01-4ddb-a794-4b2286b47158" />
-        <classShapeMoniker Id="696b6632-3e67-4482-baf4-4d4751ae220a" />
+        <classShapeMoniker Id="12ec368a-f019-41b4-9f09-50e3a126469d" />
+        <classShapeMoniker Id="46d0b358-7e49-490e-8a66-29c5dea0f858" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
