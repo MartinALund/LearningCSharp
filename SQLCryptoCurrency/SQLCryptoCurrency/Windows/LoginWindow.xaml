@@ -1,20 +1,19 @@
-﻿<Window x:Class="SQLCryptoCurrency.AuthenticationWindow"
+﻿<Window x:Class="SQLCryptoCurrency.Windows.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SQLCryptoCurrency"
+        xmlns:local="clr-namespace:SQLCryptoCurrency.Windows"
         mc:Ignorable="d"
-        Title="AuthenticationWindow" Height="450" Width="800">
+        Title="LoginWindow" Height="450" Width="800">
     <Grid>
-        
+                
         <StackPanel>
             <Label Content="Brugernavn" Margin="50,120,50,0" HorizontalAlignment="Center"/>
             <TextBox x:Name="tbUsername" Text="" Margin="50,0,50,0" MinWidth="250" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
             <Label Content="Kodeord" Margin="50,20,50,0" HorizontalAlignment="Center"/>
-            <TextBox x:Name="tbPassword" Text="" Margin="50,0,50,0" MinWidth="250" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+            <PasswordBox x:Name="pbPassword" Margin="50,0,50,0" MinWidth="250" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
             <Button x:Name="btnLogin" Content="Log ind" Margin="50,20,50,0" MinWidth="250" HorizontalAlignment="Center" Click="btnLogin_Click"/>
         </StackPanel>
-        
     </Grid>
 </Window>

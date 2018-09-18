@@ -10,9 +10,10 @@ namespace SmartParkdll
     public class ParkingLotTests
     {
         string licensePlate = "AA50823";
+        string anotherLicensePlate = "TT58000";
 
         [Fact]
-        public void CarArrive_Register()
+        public void WhenCarArrives_RegisterIt()
         {
             //Arrange
             var sut = new ParkingLot();
@@ -26,25 +27,26 @@ namespace SmartParkdll
         }
 
         [Fact]
-        public void CarArrive_CheckDuplicate()
+        public void WhenCarArrives_CheckIfDuplicate()
         {
             var sut = new ParkingLot();
             var car = new Car(licensePlate);
 
             sut.EnterParkingLot(car);
+
+
             var ex = Assert.Throws<Exception>(() => sut.EnterParkingLot(car));
             Assert.Equal("Duplicate registration number", ex.Message);
         }
 
         [Fact]
-        public void CarDepart_Register()
+        public void WhenCarDeparts_RegisterIt()
         {
             var sut = new ParkingLot();
             var car = new Car(licensePlate);
 
             sut.EnterParkingLot(car);
             sut.LeaveParkingLot(car);
-
             var parkingLotCount = sut.GetAllCars();
 
             Assert.Equal(0, parkingLotCount.Count);
@@ -54,7 +56,7 @@ namespace SmartParkdll
         public void WhenCarDoesNotExist_ThrowException()
         {
             var sut = new ParkingLot();
-            sut.EnterParkingLot(new Car("TT58000"));
+            sut.EnterParkingLot(new Car(anotherLicensePlate));
 
             var ex = Assert.Throws<NullReferenceException>(() => sut.GetCar(new Car(licensePlate)));
             Assert.Equal("Car is not parked in parking lot", ex.Message);

@@ -12,29 +12,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SQLCryptoCurrency
+namespace SQLCryptoCurrency.Windows
 {
     /// <summary>
-    /// Interaction logic for AuthenticationWindow.xaml
+    /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class AuthenticationWindow : Window
+    public partial class LoginWindow : Window
     {
-
         LinqToSQLDatabaseHandler linqToSQLDatabaseHandler = new LinqToSQLDatabaseHandler();
-        public AuthenticationWindow()
+
+        public LoginWindow()
         {
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {          
+        {
+
+            //Ændre login til email i stedet for brugernavn! Email som primary key?? Nah bare tjek om email findes når man opretter bruger.
+
             string username = tbUsername.Text;
-            string password = tbPassword.Text;
+            string password = pbPassword.Password;
 
             User fetchedUser = linqToSQLDatabaseHandler.GetUser(username);
             if (fetchedUser != null)
             {
-                if(BCrypt.Net.BCrypt.Verify(password, fetchedUser.Password))
+                if (BCrypt.Net.BCrypt.Verify(password, fetchedUser.Password))
                 {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();

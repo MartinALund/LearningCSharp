@@ -61,9 +61,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ADODatabaseHandler.cs" />
-    <Compile Include="AuthenticationWindow.xaml.cs">
-      <DependentUpon>AuthenticationWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="IDatabaseHandler.cs" />
     <Compile Include="LinqToSQL.designer.cs">
       <AutoGen>True</AutoGen>
@@ -72,22 +69,38 @@
     </Compile>
     <Compile Include="LinqToSQLDatabaseHandler.cs" />
     <Compile Include="UserDatabase.cs" />
-    <Page Include="AuthenticationWindow.xaml">
+    <Compile Include="Windows\AuthenticationWindow.xaml.cs">
+      <DependentUpon>AuthenticationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SignUpWindow.xaml.cs">
+      <DependentUpon>SignUpWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Windows\AuthenticationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Windows\LoginWindow.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Windows\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SignUpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\User.cs" />
