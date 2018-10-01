@@ -1,39 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Marubo.Model
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
-    [Table("Customer")]
-    public partial class Customer
+    class Customer
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
-        {
-            Invoices = new HashSet<Invoice>();
-        }
-
-        public int CustomerId { get; set; }
-
-        [StringLength(50)]
-        public string FirstName { get; set; }
-
-        [StringLength(50)]
-        public string LastName { get; set; }
-
-        public int? LocationZip { get; set; }
-
-        [StringLength(15)]
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public int FailedAttempts { get; set; }
+        public int LocationZip { get; set; }
+        public string Adress { get; set; }
         public string Phone { get; set; }
 
-        [StringLength(100)]
-        public string Adress { get; set; }
-
-        public virtual Location Location { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Invoice> Invoices { get; set; }
     }
 }

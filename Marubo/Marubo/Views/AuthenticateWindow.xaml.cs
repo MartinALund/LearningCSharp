@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,19 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Marubo.Model;
 
-namespace Marubo
+namespace Marubo.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AuthenticateWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AuthenticateWindow : Window
     {
-
-        public MainWindow()
+        public AuthenticateWindow()
         {
             InitializeComponent();
         }

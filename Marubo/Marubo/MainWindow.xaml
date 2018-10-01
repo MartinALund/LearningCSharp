@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btnTest" Content="TJEK" Click="btnTest_Click"/>
+		<ListView Margin="10" Name="lvTest">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Header="Product Name" Width="120" DisplayMemberBinding="{Binding ProductName}" />
+                    <GridViewColumn Header="Packaging" Width="120" DisplayMemberBinding="{Binding Packaging}"/>
+				</GridView>
+			</ListView.View>
+		</ListView>
     </Grid>
 </Window>
