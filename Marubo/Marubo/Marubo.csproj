@@ -69,6 +69,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AuthenticationWindow.xaml.cs">
+      <DependentUpon>AuthenticationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IDatabaseHandler.cs" />
     <Compile Include="LinqDatabaseHandler.cs" />
     <Compile Include="MaruboDB.designer.cs">
@@ -77,15 +80,34 @@
       <DependentUpon>MaruboDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Views\AuthenticateWindow.xaml.cs">
-      <DependentUpon>AuthenticateWindow.xaml</DependentUpon>
+    <Compile Include="UserControls\AuthenticateUC.xaml.cs">
+      <DependentUpon>AuthenticateUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CreateUserWindow.xaml.cs">
-      <DependentUpon>CreateUserWindow.xaml</DependentUpon>
+    <Compile Include="UserControls\CompanyUC.xaml.cs">
+      <DependentUpon>CompanyUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoginWindow.xaml.cs">
-      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    <Compile Include="UserControls\CreateUserUC.xaml.cs">
+      <DependentUpon>CreateUserUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CustomerUC.xaml.cs">
+      <DependentUpon>CustomerUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmployeeUC.xaml.cs">
+      <DependentUpon>EmployeeUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LoginUC.xaml.cs">
+      <DependentUpon>LoginUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OrderUC.xaml.cs">
+      <DependentUpon>OrderUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProductUC.xaml.cs">
+      <DependentUpon>ProductUC.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AuthenticationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,15 +120,35 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\AuthenticateWindow.xaml">
+    <Page Include="UserControls\AuthenticateUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CreateUserWindow.xaml">
+    <Page Include="UserControls\CompanyUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\LoginWindow.xaml">
+    <Page Include="UserControls\CreateUserUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CustomerUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EmployeeUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\LoginUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\OrderUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ProductUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

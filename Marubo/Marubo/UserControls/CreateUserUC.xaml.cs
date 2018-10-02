@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,32 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Marubo.Model;
 
-namespace Marubo.Views
+namespace Marubo.UserControls
 {
     /// <summary>
-    /// Interaction logic for CreateUserWindow.xaml
+    /// Interaction logic for CreateUserUC.xaml
     /// </summary>
-    public partial class CreateUserWindow : Window
+    public partial class CreateUserUC : UserControl
     {
-
         LinqDatabaseHandler dbHandler = new LinqDatabaseHandler();
-        public CreateUserWindow()
+
+        public CreateUserUC()
         {
             InitializeComponent();
-
         }
 
         private void btnConfirmUser_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                CreateCustomer();
-                AuthenticateWindow window = new AuthenticateWindow();
-                window.Show();
-                this.Hide();
+                CreateCustomer();              
             }
             catch
             {

@@ -6,14 +6,18 @@
         xmlns:local="clr-namespace:Marubo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-		<ListView Margin="10" Name="lvTest">
-			<ListView.View>
-				<GridView>
-					<GridViewColumn Header="Product Name" Width="120" DisplayMemberBinding="{Binding ProductName}" />
-                    <GridViewColumn Header="Packaging" Width="120" DisplayMemberBinding="{Binding Packaging}"/>
-				</GridView>
-			</ListView.View>
-		</ListView>
-    </Grid>
+    <DockPanel Margin="20" >
+
+        <Label Content="Sparta DB" HorizontalAlignment="Center" FontSize="24" 
+               Margin="10" DockPanel.Dock="Top" FontFamily="/SpartaGUI;component/Fonts/#Open Sans SemiBold" Foreground="White"/>
+        <UniformGrid Columns="1" Margin="5" DockPanel.Dock="Left" Width="150">
+            <Button x:Name="BtnCompanies" Style="{DynamicResource MenuButton}" Content="Companies" Click="Btn_OnClick"/>
+            <Button x:Name="BtnCustomers" Style="{DynamicResource MenuButton}" Content="Customers" Click="Btn_OnClick"/>
+            <Button x:Name="BtnEmployees" Style="{DynamicResource MenuButton}" Content="Employees" Click="Btn_OnClick"/>
+            <Button x:Name="BtnOrders" Style="{DynamicResource MenuButton}" Content="Orders" Click="Btn_OnClick"/>
+            <Button x:Name="BtnProducts" Style="{DynamicResource MenuButton}" Content="Products" Click="Btn_OnClick"/>
+        </UniformGrid>
+
+        <ContentControl x:Name="ContentArea" />
+    </DockPanel>
 </Window>

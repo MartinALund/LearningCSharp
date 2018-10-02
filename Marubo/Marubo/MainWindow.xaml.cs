@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Marubo.Model;
+using Marubo.UserControls;
 
 namespace Marubo
 {
@@ -22,10 +23,34 @@ namespace Marubo
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Btn_OnClick(object sender, RoutedEventArgs e)
+        {
+            var btn = (Button)sender;
+            switch (btn.Name)
+            {
+                case "BtnCompanies":
+                    ContentArea.Content = new CompanyUC();
+                    break;
+                case "BtnCustomers":
+                    ContentArea.Content = new CustomerUC();
+                    break;
+                case "BtnEmployees":
+                    ContentArea.Content = new EmployeeUC();
+                    break;
+                case "BtnOrders":
+                    ContentArea.Content = new OrderUC();
+                    break;
+                case "BtnProducts":
+                    ContentArea.Content = new ProductUC();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

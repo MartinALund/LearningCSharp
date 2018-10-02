@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Marubo.Views
+namespace Marubo.UserControls
 {
     /// <summary>
-    /// Interaction logic for AuthenticateWindow.xaml
+    /// Interaction logic for EmployeeUC.xaml
     /// </summary>
-    public partial class AuthenticateWindow : Window
+    public partial class EmployeeUC : UserControl
     {
-        public AuthenticateWindow()
+        public EmployeeUC()
         {
             InitializeComponent();
         }
