@@ -32,9 +32,9 @@ namespace Marubo.UserControls
         {
             //Godkendt login, gå til main
 
-            string username = tbUsername.Text;
-            string password = pbPassword.Password;
-            Customer fetchedUser = dbHandler.GetCustomer(username);
+            string email = TbEmail.Text;
+            string password = PbPassword.Password;
+            Customer fetchedUser = dbHandler.GetCustomer(email);
             if (fetchedUser != null)
             {
                 MessageBox.Show(fetchedUser.Email);
