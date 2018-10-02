@@ -21,9 +21,11 @@ namespace Marubo.UserControls
     public partial class CreateUserUC : UserControl
     {
         LinqDatabaseHandler dbHandler = new LinqDatabaseHandler();
+        AuthenticationWindow authWindow;
 
-        public CreateUserUC()
+        public CreateUserUC(AuthenticationWindow parentWindow)
         {
+            authWindow = parentWindow;
             InitializeComponent();
         }
 
@@ -31,7 +33,8 @@ namespace Marubo.UserControls
         {
             try
             {
-                CreateCustomer();              
+                CreateCustomer();
+                authWindow.Content = new LoginUC(authWindow);          
             }
             catch
             {
@@ -51,7 +54,6 @@ namespace Marubo.UserControls
             customer.Password = BCrypt.Net.BCrypt.HashPassword(tbPassword.Password.ToString());
             customer.FailedLoginAttempts = 0;
             dbHandler.InsertIntoCustomerDatabase(customer);
-
         }
     }
 }

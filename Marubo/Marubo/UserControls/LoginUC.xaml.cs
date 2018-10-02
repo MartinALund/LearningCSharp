@@ -21,6 +21,7 @@ namespace Marubo.UserControls
     public partial class LoginUC : UserControl
     {
         AuthenticationWindow authWindow;
+        LinqDatabaseHandler dbHandler = new LinqDatabaseHandler();
         public LoginUC(AuthenticationWindow parentWindow)
         {
             authWindow = parentWindow;
@@ -30,10 +31,30 @@ namespace Marubo.UserControls
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             //Godkendt login, gå til main
-            MainWindow main = new MainWindow();
-            main.Show();
-            authWindow.Hide();
-                       
+
+            string username = tbUsername.Text;
+            string password = pbPassword.Password;
+            Customer fetchedUser = dbHandler.GetCustomer(username);
+            if (fetchedUser != null)
+            {
+                MessageBox.Show(fetchedUser.Email);
+                if (BCrypt.Net.BCrypt.Verify(password, fetchedUser.Password))
+                {
+                    MainWindow main = new MainWindow();
+                    main.Show();
+                    authWindow.Hide();
+                }
+                else
+                {
+                    // Wrong password!
+                    MessageBox.Show("Wrong information entered, try again!");
+                }
+            }
+            else
+            {
+                //Wrong username!
+                MessageBox.Show("Wrong information entered, try again!");
+            }
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Marubo.UserControls
         }
         private void BtnCreateUser_Click(object sender, RoutedEventArgs e)
         {
-            authControl.Content = new CreateUserUC();
+            authControl.Content = new CreateUserUC(authWindow);
 
         }
 
