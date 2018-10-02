@@ -9,8 +9,7 @@ namespace SingletonPattern
             // This will not work since the constructor is private
             // SingleObject singleObject = new SingleObject();
 
-            SingleObject singleObject = SingleObject.GetInstance();
-            singleObject.ShowMessage();
+            SingleObject.GetInstance().ShowMessage();
             Console.ReadKey();
         }
     }
