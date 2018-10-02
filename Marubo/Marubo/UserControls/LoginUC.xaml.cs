@@ -30,15 +30,12 @@ namespace Marubo.UserControls
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            //Godkendt login, gå til main
-
             string email = TbEmail.Text;
             string password = PbPassword.Password;
-            Customer fetchedUser = dbHandler.GetCustomer(email);
-            if (fetchedUser != null)
+            Customer fetchedCustomer = dbHandler.GetCustomer(email);
+            if (fetchedCustomer != null)
             {
-                MessageBox.Show(fetchedUser.Email);
-                if (BCrypt.Net.BCrypt.Verify(password, fetchedUser.Password))
+                if (BCrypt.Net.BCrypt.Verify(password, fetchedCustomer.Password))
                 {
                     MainWindow main = new MainWindow();
                     main.Show();
