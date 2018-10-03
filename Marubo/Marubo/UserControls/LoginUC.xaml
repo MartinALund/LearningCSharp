@@ -26,8 +26,8 @@
         </AdornerDecorator>
         <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
         
-        <Button x:Name="btnLogin" Content="Log ind" Style="{StaticResource AuthWindowButton}" Margin="0,10,0,0" MinWidth="250" HorizontalAlignment="Center" Click="BtnLogin_Click"/>
-        <Button x:Name="BtnBack" Content="Gå tilbage" Style="{StaticResource AuthWindowButton}" Margin="0,10,0,0" MinWidth="250" HorizontalAlignment="Center" Click="BtnBack_Click"/>
+        <Button x:Name="btnLogin" Content="Log ind" Style="{StaticResource AuthWindowButton}" MinWidth="250" HorizontalAlignment="Center" Click="BtnLogin_Click"/>
+        <Button x:Name="BtnBack" Content="Gå tilbage" Style="{StaticResource AuthWindowButton}" MinWidth="250" HorizontalAlignment="Center" Click="BtnBack_Click"/>
 
     </StackPanel>
 </UserControl>

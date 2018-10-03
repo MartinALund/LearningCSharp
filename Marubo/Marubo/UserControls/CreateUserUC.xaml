@@ -4,18 +4,91 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Marubo.UserControls"
+             xmlns:utils="clr-namespace:Marubo.Utils"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
-            <TextBox x:Name="tbFirstName" Text="Fornavn"/>
-            <TextBox x:Name="tbLastName" Text="Efternavn"/>
-            <TextBox x:Name="tbAdress" Text="Adresse"/>
-            <TextBox x:Name="tbZip" Text="Postnummer"/>
-            <TextBox x:Name="tbPhone" Text="Telefon"/>
-            <TextBox x:Name="tbEmail" Text="Email"/>
-            <PasswordBox x:Name="tbPassword"/>
-            <Button x:Name="btnConfirmUser" Content="Opret bruger" Click="btnConfirmUser_Click"/>
+            <AdornerDecorator Margin="0,10,0,0">
+                <TextBox x:Name="TbFirstName" Style="{StaticResource CreateUserTextBox}">
+                <utils:WatermarkService.Watermark>
+                        <TextBlock>Fornavn</TextBlock>
+                    </utils:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
+
+            <AdornerDecorator Margin="0,10,0,0">
+                <TextBox x:Name="TbLastName" Style="{StaticResource CreateUserTextBox}">
+                <utils:WatermarkService.Watermark>
+                        <TextBlock>Efternavn</TextBlock>
+                    </utils:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
+
+
+            <AdornerDecorator Margin="0,10,0,0">
+                <TextBox x:Name="TbAdress" Style="{StaticResource CreateUserTextBox}">
+                    <utils:WatermarkService.Watermark>
+                        <TextBlock>Adresse</TextBlock>
+                    </utils:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
+
+
+            <AdornerDecorator Margin="0,10,0,0">
+                <TextBox x:Name="TbZip" Style="{StaticResource CreateUserTextBox}">
+                    <utils:WatermarkService.Watermark>
+                        <TextBlock>Postnummer</TextBlock>
+                    </utils:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
+
+
+            <AdornerDecorator Margin="0,10,0,0">
+                <TextBox x:Name="TbPhone" Style="{StaticResource CreateUserTextBox}">
+                    <utils:WatermarkService.Watermark>
+                        <TextBlock>Telefon</TextBlock>
+                    </utils:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
+
+
+            <AdornerDecorator Margin="0,10,0,0">
+                <TextBox x:Name="TbEmail" Style="{StaticResource CreateUserTextBox}">
+                    <utils:WatermarkService.Watermark>
+                        <TextBlock>Email</TextBlock>
+                    </utils:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
+
+
+            <AdornerDecorator Margin="0,10,0,0">
+                <PasswordBox x:Name="PbPassword" Style="{StaticResource LoginPasswordBox}">
+                    <utils:WatermarkService.Watermark>
+                        <TextBlock>Password</TextBlock>
+                    </utils:WatermarkService.Watermark>
+                </PasswordBox>
+            </AdornerDecorator>
+            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
+
+            <AdornerDecorator Margin="0,10,0,0">
+                <PasswordBox x:Name="PbPasswordConfirm" Style="{StaticResource LoginPasswordBox}">
+                    <utils:WatermarkService.Watermark>
+                        <TextBlock>Bekræft password</TextBlock>
+                    </utils:WatermarkService.Watermark>
+                </PasswordBox>
+            </AdornerDecorator>
+            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
+
+
+            <Button x:Name="btnConfirmUser" Content="Opret bruger" Click="btnConfirmUser_Click" Style="{StaticResource AuthWindowButton}"/>
+            <Button x:Name="BtnBack" Content="Gå tilbage" Click="BtnBack_Click" Style="{StaticResource AuthWindowButton}"/>
         </StackPanel>
     </Grid>
 </UserControl>
