@@ -9,7 +9,7 @@
         Title="AuthenticationWindow" MinHeight="575" MinWidth="300" Height="575" Width="400" MaxHeight="575" MaxWidth="400"
         Background="{StaticResource MainBackgroundColor}">
     <StackPanel Margin="20">
-        <Image Source="Assets/Marubo.PNG" Height="150" Width="350" HorizontalAlignment="Center" />
+        <Image x:Name="ImageMarubo" Source="Assets/Marubo.PNG" Height="150" Width="350" HorizontalAlignment="Center" />
         <utils:FadingContentControl x:Name="ContentArea">
         </utils:FadingContentControl>
     </StackPanel>

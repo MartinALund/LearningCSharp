@@ -47,6 +47,11 @@ namespace Marubo.UserControls
         {
 
             //Tilføj mere validering her!
+            //Tjek om email findes i system allerede
+            //Tjek regex på email
+            //Tjek om Zip er tal kun
+            //Tjek på længde af password(skal være mere end 8)
+            //Tjek at ingen af felterne er null
             string password = PbPassword.Password.ToString();
             string confirmPassword = PbPasswordConfirm.Password.ToString();
             if (!password.Equals(confirmPassword))
