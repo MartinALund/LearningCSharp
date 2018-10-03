@@ -65,7 +65,7 @@ namespace Marubo.UserControls
             customer.Password = BCrypt.Net.BCrypt.HashPassword(password);
             customer.FailedLoginAttempts = 0;
             dbHandler.InsertIntoCustomerDatabase(customer);
-            authWindow.Content = new LoginUC(authWindow);
+            authControl.Content = new LoginUC(authWindow);
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
