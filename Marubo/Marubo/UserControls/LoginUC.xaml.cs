@@ -21,10 +21,13 @@ namespace Marubo.UserControls
     public partial class LoginUC : UserControl
     {
         AuthenticationWindow authWindow;
+        ContentControl authControl;
+
         LinqDatabaseHandler dbHandler = new LinqDatabaseHandler();
         public LoginUC(AuthenticationWindow parentWindow)
         {
             authWindow = parentWindow;
+            authControl = parentWindow.ContentArea;
             InitializeComponent();
         }
 
@@ -52,6 +55,11 @@ namespace Marubo.UserControls
                 //Wrong username!
                 MessageBox.Show("Wrong information entered, try again!");
             }
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            authControl.Content = new AuthenticateUC(authWindow);
         }
     }
 }
