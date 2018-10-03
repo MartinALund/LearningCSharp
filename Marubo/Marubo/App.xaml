@@ -176,7 +176,7 @@
             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)">
                 <SplineDoubleKeyFrame KeyTime="00:00:00"
-                                      Value="150" />
+                                      Value="100" />
                 <EasingDoubleKeyFrame KeyTime="00:00:01"
                                       Value="0">
                     <EasingDoubleKeyFrame.EasingFunction>
@@ -199,7 +199,7 @@
                 <SplineDoubleKeyFrame KeyTime="00:00:00"
                                       Value="0" />
                 <SplineDoubleKeyFrame KeyTime="00:00:00.01"
-                                      Value="300" />
+                                      Value="100" />
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 
@@ -238,7 +238,7 @@
                 <SplineDoubleKeyFrame KeyTime="00:00:00"
                                       Value="0" />
                 <SplineDoubleKeyFrame KeyTime="00:00:00.01"
-                                      Value="200" />
+                                      Value="100" />
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 
