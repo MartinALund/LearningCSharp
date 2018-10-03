@@ -22,7 +22,6 @@ namespace Marubo
     {
         public AuthenticationWindow()
         {
-
             InitializeComponent();
             CenterWindowOnScreen();
             ContentArea.Content = new AuthenticateUC(this);

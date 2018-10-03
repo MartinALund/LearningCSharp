@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Marubo"
         mc:Ignorable="d"
-        Title="AuthenticationWindow" Height="500" Width="400">
-    <Grid>
-        <Label Content="Marubo DB" HorizontalAlignment="Center" Margin="0,30,0,0"/>
+        Title="AuthenticationWindow" MinHeight="300" MinWidth="300" Height="500" Width="400"
+        Background="{StaticResource MainBackgroundColor}">
+    <StackPanel Margin="20">
+        <Image Source="Assets/Marubo.PNG" Height="125" Width="350"/>
         <ContentControl x:Name="ContentArea"/>
-    </Grid>
+    </StackPanel>
 </Window>
