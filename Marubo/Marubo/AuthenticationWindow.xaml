@@ -4,11 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Marubo"
+        xmlns:utils="clr-namespace:Marubo.Utils"
         mc:Ignorable="d"
-        Title="AuthenticationWindow" MinHeight="300" MinWidth="300" Height="500" Width="400"
+        Title="AuthenticationWindow" MinHeight="350" MinWidth="300" Height="600" Width="400" MaxHeight="500" MaxWidth="400"
         Background="{StaticResource MainBackgroundColor}">
     <StackPanel Margin="20">
-        <Image Source="Assets/Marubo.PNG" Height="125" Width="350"/>
-        <ContentControl x:Name="ContentArea"/>
+        <Image Source="Assets/Marubo.PNG" Height="200" Width="350" HorizontalAlignment="Center"/>
+        
+        <utils:FadingContentControl x:Name="ContentArea">
+        </utils:FadingContentControl>
     </StackPanel>
 </Window>

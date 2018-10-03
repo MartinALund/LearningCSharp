@@ -104,6 +104,9 @@
     <Compile Include="UserControls\ProductUC.xaml.cs">
       <DependentUpon>ProductUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\FadingContentControl.cs" />
+    <Compile Include="Utils\WatermarkAdorner.cs" />
+    <Compile Include="Utils\WatermarkService.cs" />
     <Page Include="AuthenticationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -194,5 +197,6 @@
   <ItemGroup>
     <Resource Include="Assets\Marubo.PNG" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
