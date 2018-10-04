@@ -5,6 +5,15 @@
              xmlns:utils="clr-namespace:Marubo.Utils"
              StartupUri="AuthenticationWindow.xaml">
     <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
         <SolidColorBrush x:Key="MainBackgroundColor" Color="#353C3F"></SolidColorBrush>
         <SolidColorBrush x:Key="MainButtonColor" Color="#595959"></SolidColorBrush>
         <SolidColorBrush x:Key="MainButtonColorHover" Color="#756867"></SolidColorBrush>
@@ -273,5 +282,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
