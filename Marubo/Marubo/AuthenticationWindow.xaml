@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:Marubo"
         xmlns:utils="clr-namespace:Marubo.Utils"
         mc:Ignorable="d"
-        Title="AuthenticationWindow" MinHeight="575" MinWidth="300" Height="575" Width="400" MaxHeight="575" MaxWidth="400"
-        Background="{StaticResource MainBackgroundColor}">
+        Title="AuthenticationWindow" MinHeight="625" MinWidth="300" Height="625" Width="400" MaxHeight="625" MaxWidth="400"
+        Background="{StaticResource MainBackgroundColor}"
+        FontFamily="{StaticResource MaterialDesignFont}">
     <StackPanel Margin="20">
-        <Image x:Name="ImageMarubo" Source="Assets/Marubo.PNG" Height="150" Width="350" HorizontalAlignment="Center" />
+        <Image x:Name="ImageMarubo" Source="Assets/Marubo.PNG" Height="100" Width="350" HorizontalAlignment="Center" />
         <utils:FadingContentControl x:Name="ContentArea">
         </utils:FadingContentControl>
     </StackPanel>

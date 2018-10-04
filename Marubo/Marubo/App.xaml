@@ -8,12 +8,21 @@
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#756867"/>
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="#D5D6D2"/>
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#595959"/>
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#D5D6D2"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#353C3F"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#D5D6D2"/>
+            <!-- accent -->
+            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="#FF8D3F"/>
+            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="#D5D6D2"/>
+
+            
         <SolidColorBrush x:Key="MainBackgroundColor" Color="#353C3F"></SolidColorBrush>
         <SolidColorBrush x:Key="MainButtonColor" Color="#595959"></SolidColorBrush>
         <SolidColorBrush x:Key="MainButtonColorHover" Color="#756867"></SolidColorBrush>
@@ -125,56 +134,17 @@
             <Setter Property="CaretBrush" Value="{StaticResource AccentColor}"/>
         </Style>
 
-        <Style x:Key="LoginPasswordBox" TargetType="{x:Type PasswordBox}">
-            <Setter Property="MinWidth" Value="250"/>
-            <Setter Property="MaxWidth" Value="250"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Background" Value="#00000000"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
-            <Setter Property="CaretBrush" Value="{StaticResource AccentColor}"/>
-        </Style>
+            <Style x:Key="LoginPasswordBox" TargetType="{x:Type PasswordBox}">
+                <Setter Property="MinWidth" Value="250"/>
+                <Setter Property="MaxWidth" Value="250"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="Background" Value="#00000000"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
+                <Setter Property="CaretBrush" Value="{StaticResource AccentColor}"/>
+            </Style>
 
-        <Style x:Key="AuthWindowButton" TargetType="{x:Type Button}">
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Background" Value="{StaticResource MainButtonColor}" />
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Height" Value="30" />
-            <Setter Property="MaxWidth" Value="350"/>
-            <Setter Property="Margin" Value="0,10,0,0"/>
-            <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}" />
-            <Setter Property="FontFamily" Value="/SpartaGUI;component/Fonts/#Open Sans SemiBold" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="{StaticResource MainButtonColorHover}"/>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Button.Effect">
-                        <Setter.Value>
-                            <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
-                        </Setter.Value>
-                    </Setter>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-
-
-
-
-
-
-
-        <Storyboard x:Key="fadeIn">
+            <Storyboard x:Key="fadeIn">
             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
                                            Storyboard.TargetProperty="(UIElement.Opacity)">
                 <SplineDoubleKeyFrame KeyTime="00:00:00"

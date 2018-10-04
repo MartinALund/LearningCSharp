@@ -3,92 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Marubo.UserControls"
+             xmlns:local="clr-namespace:Marubo.UserControls"         
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:utils="clr-namespace:Marubo.Utils"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <AdornerDecorator Margin="0,10,0,0">
-                <TextBox x:Name="TbFirstName" Style="{StaticResource CreateUserTextBox}">
-                <utils:WatermarkService.Watermark>
-                        <TextBlock>Fornavn</TextBlock>
-                    </utils:WatermarkService.Watermark>
-                </TextBox>
-            </AdornerDecorator>
-            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
+        <StackPanel >
 
-            <AdornerDecorator Margin="0,10,0,0">
-                <TextBox x:Name="TbLastName" Style="{StaticResource CreateUserTextBox}">
-                <utils:WatermarkService.Watermark>
-                        <TextBlock>Efternavn</TextBlock>
-                    </utils:WatermarkService.Watermark>
-                </TextBox>
-            </AdornerDecorator>
-            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
+            <TextBox x:Name="TbFirstName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Fornavn" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <TextBox x:Name="TbLastName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Efternavn" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <TextBox x:Name="TbAdress" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Adresse" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <TextBox x:Name="TbZip" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Postnummer" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <TextBox x:Name="TbPhone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Telefon" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <TextBox x:Name="TbEmail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Email" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <PasswordBox x:Name="PbPassword" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Password" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <PasswordBox x:Name="PbPasswordConfirm" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Bekræft password" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5" />
 
-
-            <AdornerDecorator Margin="0,10,0,0">
-                <TextBox x:Name="TbAdress" Style="{StaticResource CreateUserTextBox}">
-                    <utils:WatermarkService.Watermark>
-                        <TextBlock>Adresse</TextBlock>
-                    </utils:WatermarkService.Watermark>
-                </TextBox>
-            </AdornerDecorator>
-            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
-
-
-            <AdornerDecorator Margin="0,10,0,0">
-                <TextBox x:Name="TbZip" Style="{StaticResource CreateUserTextBox}">
-                    <utils:WatermarkService.Watermark>
-                        <TextBlock>Postnummer</TextBlock>
-                    </utils:WatermarkService.Watermark>
-                </TextBox>
-            </AdornerDecorator>
-            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
-
-
-            <AdornerDecorator Margin="0,10,0,0">
-                <TextBox x:Name="TbPhone" Style="{StaticResource CreateUserTextBox}">
-                    <utils:WatermarkService.Watermark>
-                        <TextBlock>Telefon</TextBlock>
-                    </utils:WatermarkService.Watermark>
-                </TextBox>
-            </AdornerDecorator>
-            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
-
-
-            <AdornerDecorator Margin="0,10,0,0">
-                <TextBox x:Name="TbEmail" Style="{StaticResource CreateUserTextBox}">
-                    <utils:WatermarkService.Watermark>
-                        <TextBlock>Email</TextBlock>
-                    </utils:WatermarkService.Watermark>
-                </TextBox>
-            </AdornerDecorator>
-            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
-
-
-            <AdornerDecorator Margin="0,10,0,0">
-                <PasswordBox x:Name="PbPassword" Style="{StaticResource LoginPasswordBox}">
-                    <utils:WatermarkService.Watermark>
-                        <TextBlock>Password</TextBlock>
-                    </utils:WatermarkService.Watermark>
-                </PasswordBox>
-            </AdornerDecorator>
-            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
-
-            <AdornerDecorator Margin="0,10,0,0">
-                <PasswordBox x:Name="PbPasswordConfirm" Style="{StaticResource LoginPasswordBox}">
-                    <utils:WatermarkService.Watermark>
-                        <TextBlock>Bekræft password</TextBlock>
-                    </utils:WatermarkService.Watermark>
-                </PasswordBox>
-            </AdornerDecorator>
-            <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
-
-
-            <Button x:Name="btnConfirmUser" Content="Opret bruger" Click="btnConfirmUser_Click" Style="{StaticResource AuthWindowButton}"/>
-            <Button x:Name="BtnBack" Content="Gå tilbage" Click="BtnBack_Click" Style="{StaticResource AuthWindowButton}"/>
+            <Button x:Name="btnConfirmUser" Content="Opret bruger" Click="btnConfirmUser_Click" Style="{StaticResource MaterialDesignRaisedButton}" Margin="0,10,0,0"/>
+            <Button x:Name="BtnBack" Content="Gå tilbage" Click="BtnBack_Click" Style="{StaticResource MaterialDesignRaisedButton}" Margin="0,10,0,0"/>
         </StackPanel>
     </Grid>
 </UserControl>

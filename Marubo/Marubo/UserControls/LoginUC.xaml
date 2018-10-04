@@ -9,25 +9,23 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <AdornerDecorator Margin="0,10,0,0">
-            <TextBox x:Name="TbEmail" Text="" Style="{StaticResource LoginTextBox}">
+            <TextBox x:Name="TbEmail" Text="" Style="{StaticResource MaterialDesignTextBox}">
                 <utils:WatermarkService.Watermark>
                     <TextBlock>Email</TextBlock>
                 </utils:WatermarkService.Watermark>
             </TextBox>
         </AdornerDecorator>
-        <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
 
         <AdornerDecorator Margin="0,10,0,0">
-            <PasswordBox x:Name="PbPassword" Style="{StaticResource LoginPasswordBox}">
+            <PasswordBox x:Name="PbPassword" Style="{StaticResource MaterialDesignPasswordBox}">
                 <utils:WatermarkService.Watermark>
                     <TextBlock>Password</TextBlock>
                 </utils:WatermarkService.Watermark>
             </PasswordBox>
         </AdornerDecorator>
-        <Separator Background="{StaticResource AccentColor}" MinWidth="250" MaxWidth="250"/>
-        
-        <Button x:Name="btnLogin" Content="Log ind" Style="{StaticResource AuthWindowButton}" MinWidth="250" HorizontalAlignment="Center" Click="BtnLogin_Click"/>
-        <Button x:Name="BtnBack" Content="Gå tilbage" Style="{StaticResource AuthWindowButton}" MinWidth="250" HorizontalAlignment="Center" Click="BtnBack_Click"/>
+
+        <Button x:Name="btnLogin" Content="Log ind" Style="{StaticResource MaterialDesignRaisedButton}" MinWidth="250" HorizontalAlignment="Center" Click="BtnLogin_Click" Margin="0,10,0,0"/>
+        <Button x:Name="BtnBack" Content="Gå tilbage" Style="{StaticResource MaterialDesignRaisedButton}" MinWidth="250" HorizontalAlignment="Center" Click="BtnBack_Click" Margin="0,10,0,0"/>
 
     </StackPanel>
 </UserControl>
