@@ -58,32 +58,32 @@
                 <ListView x:Name="ListViewMenu" Foreground="{StaticResource PrimaryTextColor}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem x:Name="CompanyUC" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Maxcdn" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="Store" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Companies" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="CustomerUC" Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Duck" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Customer" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ProductUC" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="Shopping" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Product" VerticalAlignment="Center"  Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="EmployeeUC" Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Employees" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="OrderUC" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="BulletinBoard" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Orders" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="EmployeeUC" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="AccountNetwork" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Employees" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="CustomerUC" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Customer" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
