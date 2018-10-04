@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Marubo"
              xmlns:utils="clr-namespace:Marubo.Utils"
-             StartupUri="AuthenticationWindow.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
 
         <ResourceDictionary>

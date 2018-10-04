@@ -29,25 +29,37 @@ namespace Marubo
             CenterWindowOnScreen();
         }
 
-        private void Btn_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
-            var btn = (Button)sender;
-            switch (btn.Name)
+            ButtonCloseMenu.Visibility = Visibility.Visible;
+            ButtonOpenMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonCloseMenu.Visibility = Visibility.Collapsed;
+            ButtonOpenMenu.Visibility = Visibility.Visible;
+        }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
-                case "BtnCompanies":
+                case "CompanyUC":
                     ContentArea.Content = new CompanyUC();
                     break;
-                case "BtnCustomers":
+                case "CustomerUC":
                     ContentArea.Content = new CustomerUC();
                     break;
-                case "BtnEmployees":
+                case "ProductUC":
+                    ContentArea.Content = new ProductUC();
+                    break;
+                case "EmployeeUC":
                     ContentArea.Content = new EmployeeUC();
                     break;
-                case "BtnOrders":
+                case "OrderUC":
                     ContentArea.Content = new OrderUC();
-                    break;
-                case "BtnProducts":
-                    ContentArea.Content = new ProductUC();
                     break;
                 default:
                     break;
