@@ -20,9 +20,14 @@ namespace Marubo.UserControls
     /// </summary>
     public partial class ProductUC : UserControl
     {
+        LinqDatabaseHandler dbHandler = new LinqDatabaseHandler();
+        List<Product> products;
         public ProductUC()
         {
+            products = dbHandler.GetProducts();
             InitializeComponent();
+            lvDataBinding.ItemsSource = products;
+            
         }
     }
 }

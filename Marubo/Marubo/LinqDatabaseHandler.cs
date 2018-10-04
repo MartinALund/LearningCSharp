@@ -22,6 +22,13 @@ namespace Marubo
             return user;
         }
 
+        public List<Product> GetProducts()
+        {
+            ConnectToDatabase();
+            List<Product> products = db.Products.ToList();
+            return products;
+        }
+
         public void InsertIntoCustomerDatabase(Customer customer)
         {
             ConnectToDatabase();
