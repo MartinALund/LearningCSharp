@@ -111,8 +111,6 @@
       <DependentUpon>ProductUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\FadingContentControl.cs" />
-    <Compile Include="Utils\WatermarkAdorner.cs" />
-    <Compile Include="Utils\WatermarkService.cs" />
     <Page Include="AuthenticationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
