@@ -10,16 +10,22 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.BlueGrey.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.DeepOrange.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            
-            
+
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="GhostWhite"/>
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="Black"/>
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#756867"/>
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#D5D6D2"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#353C3F"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#D5D6D2"/>
+            <!--  accent -->
+            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="#FF8D3F"/>
+            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="Black"/>
+            <SolidColorBrush x:Key="BlackColor" Color="#000"/>
+
 
             <SolidColorBrush x:Key="PrimaryTextColor" Color="#D5D6D2"></SolidColorBrush>
 
-            <Style x:Key="MaruboLogo" TargetType="{x:Type Image}">
-            </Style>
 
             <Storyboard x:Key="fadeIn">
             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"

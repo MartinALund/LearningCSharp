@@ -40,7 +40,7 @@ namespace Marubo.UserControls
             {
                 if (BCrypt.Net.BCrypt.Verify(password, fetchedCustomer.Password))
                 {
-                    MainWindow main = new MainWindow();
+                    MainWindow main = new MainWindow(fetchedCustomer);
                     main.Show();
                     authWindow.Hide();
                 }

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Marubo.UserControls.ProfileUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Marubo.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Padding="20"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <Label Content="Rediger profil" FontSize="26" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="TbFirstName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:ColorZoneAssist.Mode="PrimaryDark" materialDesign:HintAssist.Hint="Fornavn" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <TextBox x:Name="TbLastName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Efternavn" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <TextBox x:Name="TbAdress" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Adresse" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <TextBox x:Name="TbZip" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Postnummer" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <TextBox x:Name="TbPhone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Telefon" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <TextBox x:Name="TbEmail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Email" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5"/>
+            <Button x:Name="BtnEditUser" Content="Rediger" Click="BtnEditUser_Click" Style="{StaticResource MaterialDesignRaisedButton}" Foreground="{StaticResource PrimaryTextColor}" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

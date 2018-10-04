@@ -109,6 +109,9 @@
     <Compile Include="UserControls\ProductUC.xaml.cs">
       <DependentUpon>ProductUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ProfileUC.xaml.cs">
+      <DependentUpon>ProfileUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utils\FadingContentControl.cs" />
     <Page Include="AuthenticationWindow.xaml">
       <SubType>Designer</SubType>
@@ -155,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\ProductUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ProfileUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

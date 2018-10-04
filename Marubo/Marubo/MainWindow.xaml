@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Marubo"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
@@ -30,7 +30,7 @@
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
         </EventTrigger>
     </Window.Triggers>
-    <Grid Background="{StaticResource PrimaryHueMidBrush}">
+    <Grid Background="{StaticResource PrimaryHueDarkBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
@@ -39,12 +39,12 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid  Grid.Column="1"  Height="60" VerticalAlignment="Top" Background="{StaticResource PrimaryHueDarkBrush}">
+        <Grid  Grid.Column="1"  Height="60" VerticalAlignment="Top" Background="{StaticResource BlackColor}">
             <Image x:Name="ImageMarubo" Source="Assets/Marubo.PNG" RenderOptions.BitmapScalingMode="HighQuality" Height="60" Width="180" />
         </Grid>
-        <Grid x:Name="GridMenu" Grid.RowSpan="2" Width="70" HorizontalAlignment="Left" Background="{StaticResource PrimaryHueDarkBrush}">
+        <Grid x:Name="GridMenu" Grid.RowSpan="2" Width="70" HorizontalAlignment="Left" Background="{StaticResource BlackColor}">
             <StackPanel>
-                <Grid Height="60" Background="{StaticResource PrimaryHueDarkBrush}" RenderTransformOrigin="0.5,0.5">
+                <Grid Height="60" Background="{StaticResource BlackColor}" RenderTransformOrigin="0.5,0.5">
                     <Grid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -53,13 +53,12 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <Button x:Name="ButtonOpenMenu" Height="60" Margin="10" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{StaticResource SecondaryAccentForegroundBrush}" Click="ButtonOpenMenu_Click">
+                    <Button x:Name="ButtonOpenMenu" Height="60" Margin="10" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{StaticResource SecondaryAccentBrush}" Click="ButtonOpenMenu_Click">
                         <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
                     </Button>
-                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Margin="10" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{StaticResource SecondaryAccentForegroundBrush}" Click="ButtonCloseMenu_Click">
+                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Margin="10" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{StaticResource SecondaryAccentBrush}" Click="ButtonCloseMenu_Click">
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
-
                     <Image Height="80" VerticalAlignment="Bottom"/>
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="{StaticResource PrimaryTextColor}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
@@ -81,21 +80,21 @@
                             <TextBlock Text="Orders" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="EmployeeUC" Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="AccountNetwork" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Employees" VerticalAlignment="Center"  Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
                     <ListViewItem x:Name="CustomerUC" Height="60">
                         <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="MessageBulletedOff" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Customers" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ProfileUC" Height="60">
+                        <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Customer" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Profile" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
         </Grid>
-        <ContentControl x:Name="ContentArea" Grid.Row="1" Grid.Column="1" />
+        <ContentControl x:Name="ContentArea" Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Window>

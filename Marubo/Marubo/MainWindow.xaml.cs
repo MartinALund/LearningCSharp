@@ -22,8 +22,10 @@ namespace Marubo
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        Customer currentCustomer;
+        public MainWindow(Customer loggedInCustomer)
         {
+            currentCustomer = loggedInCustomer;
             InitializeComponent();
             CenterWindowOnScreen();
         }
@@ -59,6 +61,9 @@ namespace Marubo
                     break;
                 case "OrderUC":
                     ContentArea.Content = new OrderUC();
+                    break;
+                case "ProfileUC":
+                    ContentArea.Content = new ProfileUC(currentCustomer);
                     break;
                 default:
                     break;
