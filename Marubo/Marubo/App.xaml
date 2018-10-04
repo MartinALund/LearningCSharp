@@ -108,40 +108,7 @@
             </Style.Triggers>
         </Style>
 
-        <Style x:Key="MaruboLogo" TargetType="{x:Type Image}">
-
-        </Style>
-
-        <Style x:Key="CreateUserTextBox" TargetType="{x:Type TextBox}">
-            <Setter Property="MinWidth" Value="250"/>
-            <Setter Property="MaxWidth" Value="250"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Background" Value="#00000000"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
-            <Setter Property="CaretBrush" Value="{StaticResource AccentColor}"/>
-        </Style>
-
-        <Style x:Key="LoginTextBox" TargetType="{x:Type TextBox}">
-            <Setter Property="MinWidth" Value="250"/>
-            <Setter Property="MaxWidth" Value="250"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Background" Value="#00000000"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
-            <Setter Property="CaretBrush" Value="{StaticResource AccentColor}"/>
-        </Style>
-
-            <Style x:Key="LoginPasswordBox" TargetType="{x:Type PasswordBox}">
-                <Setter Property="MinWidth" Value="250"/>
-                <Setter Property="MaxWidth" Value="250"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="Background" Value="#00000000"/>
-                <Setter Property="BorderThickness" Value="0"/>
-                <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
-                <Setter Property="CaretBrush" Value="{StaticResource AccentColor}"/>
+            <Style x:Key="MaruboLogo" TargetType="{x:Type Image}">
             </Style>
 
             <Storyboard x:Key="fadeIn">
