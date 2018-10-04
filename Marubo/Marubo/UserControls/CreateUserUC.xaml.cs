@@ -59,7 +59,7 @@ namespace Marubo.UserControls
                 MessageBox.Show("Password stemmer ikke overens");
                 return;
             }
-
+            
             Customer customer = new Customer();
             customer.FirstName = TbFirstName.Text;
             customer.LastName = TbLastName.Text;

@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Marubo.Interfaces;
-using Marubo.Model;
-
 namespace Marubo
 {
     class LinqDatabaseHandler : IDatabaseHandler

@@ -3,110 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Marubo"
              xmlns:utils="clr-namespace:Marubo.Utils"
-             StartupUri="MainWindow.xaml">
+             StartupUri="AuthenticationWindow.xaml">
     <Application.Resources>
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.BlueGrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.DeepOrange.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
-            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#756867"/>
-            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="#D5D6D2"/>
-            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#595959"/>
-            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#D5D6D2"/>
-            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#353C3F"/>
-            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#D5D6D2"/>
-            <!-- accent -->
-            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="#FF8D3F"/>
-            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="#D5D6D2"/>
-
             
-        <SolidColorBrush x:Key="MainBackgroundColor" Color="#353C3F"></SolidColorBrush>
-        <SolidColorBrush x:Key="MainButtonColor" Color="#595959"></SolidColorBrush>
-        <SolidColorBrush x:Key="MainButtonColorHover" Color="#756867"></SolidColorBrush>
-        <SolidColorBrush x:Key="PrimaryTextColor" Color="#D5D6D2"></SolidColorBrush>
-        <SolidColorBrush x:Key="AccentColor" Color="#FF8D3F"></SolidColorBrush>
+            
 
-        <Style x:Key="CustomWindow" TargetType="Window">
-            <Setter Property="Background" Value="{StaticResource MainBackgroundColor}"></Setter>
-        </Style>
-
-        <Style x:Key="LabelHeader" TargetType="Label">
-            <Setter Property="FontSize" Value="24" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-        </Style>
-
-        <Style x:Key="LabelAttributeText" TargetType="Label">
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="HorizontalAlignment" Value="Right" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Margin" Value="0,0,10,0" />
-        </Style>
-
-        <Style x:Key="TextBoxInput" TargetType="TextBox">
-            <Setter Property="Margin" Value="4" />
-            <Setter Property="VerticalContentAlignment" Value="Center" />
-        </Style>
-
-        <Style x:Key="UIButton" TargetType="Button" >
-            <Setter Property="Background" Value="{StaticResource MainButtonColor}" />
-            <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}" />
-            <Setter Property="Margin" Value="4" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="{StaticResource MainButtonColorHover}"/>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="RenderTransform">
-                        <Setter.Value>
-                            <ScaleTransform ScaleX=".95" ScaleY=".95"></ScaleTransform>
-                        </Setter.Value>
-                    </Setter>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style x:Key="MenuButton" TargetType="{x:Type Button}">
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Background" Value="{StaticResource MainButtonColor}" />
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Height" Value="30" />
-            <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}" />
-            <Setter Property="FontFamily" Value="/SpartaGUI;component/Fonts/#Open Sans SemiBold" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="{StaticResource MainButtonColorHover}"/>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Button.Effect">
-                        <Setter.Value>
-                            <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
-                        </Setter.Value>
-                    </Setter>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+            <SolidColorBrush x:Key="PrimaryTextColor" Color="#D5D6D2"></SolidColorBrush>
 
             <Style x:Key="MaruboLogo" TargetType="{x:Type Image}">
             </Style>

@@ -31,13 +31,20 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid Background="{StaticResource PrimaryHueMidBrush}">
-        <ContentControl x:Name="ContentArea" />
-        <Grid Height="60" VerticalAlignment="Top" Background="{StaticResource MainBackgroundColor}">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Foreground="{StaticResource PrimaryTextColor}">Marubo</TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid  Grid.Column="1"  Height="60" VerticalAlignment="Top" Background="{StaticResource PrimaryHueDarkBrush}">
+            <Image x:Name="ImageMarubo" Source="Assets/Marubo.PNG" RenderOptions.BitmapScalingMode="HighQuality" Height="60" Width="180" />
         </Grid>
-        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="{StaticResource MainBackgroundColor}">
+        <Grid x:Name="GridMenu" Grid.RowSpan="2" Width="70" HorizontalAlignment="Left" Background="{StaticResource PrimaryHueDarkBrush}">
             <StackPanel>
-                <Grid Height="60" Background="{StaticResource MainBackgroundColor}" RenderTransformOrigin="0.5,0.5">
+                <Grid Height="60" Background="{StaticResource PrimaryHueDarkBrush}" RenderTransformOrigin="0.5,0.5">
                     <Grid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -46,10 +53,10 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <Button x:Name="ButtonOpenMenu" Height="60" Margin="10" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{StaticResource AccentColor}" Click="ButtonOpenMenu_Click">
+                    <Button x:Name="ButtonOpenMenu" Height="60" Margin="10" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{StaticResource SecondaryAccentForegroundBrush}" Click="ButtonOpenMenu_Click">
                         <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
                     </Button>
-                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Margin="10" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{StaticResource AccentColor}" Click="ButtonCloseMenu_Click">
+                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Margin="10" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{StaticResource SecondaryAccentForegroundBrush}" Click="ButtonCloseMenu_Click">
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
 
@@ -89,5 +96,6 @@
                 </ListView>
             </StackPanel>
         </Grid>
+        <ContentControl x:Name="ContentArea" Grid.Row="1" Grid.Column="1" />
     </Grid>
 </Window>

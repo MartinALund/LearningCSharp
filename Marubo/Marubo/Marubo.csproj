@@ -85,7 +85,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MaruboDB.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Customer.cs" />
     <Compile Include="UserControls\AuthenticateUC.xaml.cs">
       <DependentUpon>AuthenticateUC.xaml</DependentUpon>
     </Compile>

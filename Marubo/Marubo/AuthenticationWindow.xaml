@@ -7,10 +7,10 @@
         xmlns:utils="clr-namespace:Marubo.Utils"
         mc:Ignorable="d"
         Title="AuthenticationWindow" MinHeight="625" MinWidth="300" Height="625" Width="400" MaxHeight="625" MaxWidth="400"
-        Background="{StaticResource MainBackgroundColor}"
+        Background="{StaticResource PrimaryHueDarkBrush}"
         FontFamily="{StaticResource MaterialDesignFont}">
     <StackPanel Margin="20">
-        <Image x:Name="ImageMarubo" Source="Assets/Marubo.PNG" Height="100" Width="350" HorizontalAlignment="Center" />
+        <Image x:Name="ImageMarubo" Source="Assets/Marubo.PNG" Height="100" Width="350"  Stretch="Fill" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Center" />
         <utils:FadingContentControl x:Name="ContentArea">
         </utils:FadingContentControl>
     </StackPanel>
