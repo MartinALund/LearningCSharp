@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Marubo.UserControls;
+using Marubo.Utils;
 
 namespace Marubo
 {
@@ -23,9 +24,9 @@ namespace Marubo
     public partial class MainWindow : Window
     {
         Customer currentCustomer;
-        public MainWindow(Customer loggedInCustomer)
+        public MainWindow()
         {
-            currentCustomer = loggedInCustomer;
+            currentCustomer = Constants.loggedInCustomer;
             InitializeComponent();
             CenterWindowOnScreen();
         }
@@ -63,7 +64,10 @@ namespace Marubo
                     ContentArea.Content = new OrderUC();
                     break;
                 case "ProfileUC":
-                    ContentArea.Content = new ProfileUC(currentCustomer);
+                    ContentArea.Content = new ProfileUC();
+                    break;
+                case "LogoutLV":
+                    Logout();
                     break;
                 default:
                     break;
@@ -78,6 +82,13 @@ namespace Marubo
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
+        }
+        private void Logout()
+        {
+            Constants.loggedInCustomer = null;
+            AuthenticationWindow authWindow = new AuthenticationWindow();
+            this.Close();
+            authWindow.Show();
         }
     }
 }

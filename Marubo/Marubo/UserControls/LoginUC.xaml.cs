@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Marubo.Utils;
 
 namespace Marubo.UserControls
 {
@@ -22,6 +23,7 @@ namespace Marubo.UserControls
     {
         AuthenticationWindow authWindow;
         ContentControl authControl;
+
 
         LinqDatabaseHandler dbHandler = new LinqDatabaseHandler();
         public LoginUC(AuthenticationWindow parentWindow)
@@ -40,7 +42,8 @@ namespace Marubo.UserControls
             {
                 if (BCrypt.Net.BCrypt.Verify(password, fetchedCustomer.Password))
                 {
-                    MainWindow main = new MainWindow(fetchedCustomer);
+                    Constants.loggedInCustomer = fetchedCustomer;
+                    MainWindow main = new MainWindow();
                     main.Show();
                     authWindow.Hide();
                 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Marubo.Utils;
 
 namespace Marubo.UserControls
 {
@@ -21,19 +22,16 @@ namespace Marubo.UserControls
     public partial class ProfileUC : UserControl
     {
         Customer customer;
-        public ProfileUC(Customer currentCustomer)
+        public ProfileUC()
         {
-
-            //BUG! Hint forsvinder når man klikker på element
-            customer = currentCustomer;
+            customer = Constants.loggedInCustomer;
             InitializeComponent();
             InputCustomerDataIntoTextBoxes();
         }
 
         private void BtnEditUser_Click(object sender, RoutedEventArgs e)
         {
-
-            MessageBox.Show("EDIT");
+            MessageBox.Show(customer.CustomerId.ToString());
         }
 
         private void InputCustomerDataIntoTextBoxes()

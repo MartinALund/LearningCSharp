@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Marubo"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" MinHeight="600" MinWidth="800">
     
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
@@ -90,6 +90,12 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Profile" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="LogoutLV" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Logout" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Logout" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

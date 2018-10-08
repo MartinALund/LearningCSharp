@@ -112,6 +112,7 @@
     <Compile Include="UserControls\ProfileUC.xaml.cs">
       <DependentUpon>ProfileUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\FadingContentControl.cs" />
     <Page Include="AuthenticationWindow.xaml">
       <SubType>Designer</SubType>
