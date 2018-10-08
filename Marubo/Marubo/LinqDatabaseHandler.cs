@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Marubo.Interfaces;
+using Marubo.Utils;
 namespace Marubo
 {
     class LinqDatabaseHandler : IDatabaseHandler
@@ -15,15 +16,12 @@ namespace Marubo
         public LinqDatabaseHandler()
         {
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Marubo.Properties.Settings.maruboConnectionString"].ToString();
-            db = new MaruboDBDataContext(connectionString);
-            
+            db = new MaruboDBDataContext(connectionString);           
         }
 
         ~LinqDatabaseHandler()
         {
-            MessageBox.Show("Destructor called");
-            db.Connection.Close();
-            
+            db.Connection.Close();       
         }
 
         public Customer GetCustomer(string email)
@@ -46,6 +44,14 @@ namespace Marubo
 
         public void UpdateCustomer(Customer customer)
         {
+            var loggedInCustomer = db.Customers.Single(x => x.CustomerId == Constants.loggedInCustomer.CustomerId);
+            loggedInCustomer.Adress = customer.Adress;
+            loggedInCustomer.Email = customer.Email;
+            loggedInCustomer.FirstName = customer.FirstName;
+            loggedInCustomer.LastName = customer.LastName;
+            loggedInCustomer.Phone = customer.Phone;
+            db.SubmitChanges();
+            Constants.loggedInCustomer = loggedInCustomer;
         }
     }
 }

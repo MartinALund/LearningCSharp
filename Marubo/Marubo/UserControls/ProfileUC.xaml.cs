@@ -22,6 +22,7 @@ namespace Marubo.UserControls
     public partial class ProfileUC : UserControl
     {
         Customer customer;
+        LinqDatabaseHandler dbHandler = new LinqDatabaseHandler();
         public ProfileUC()
         {
             customer = Constants.loggedInCustomer;
@@ -31,6 +32,7 @@ namespace Marubo.UserControls
 
         private void BtnEditUser_Click(object sender, RoutedEventArgs e)
         {
+            UpdateCustomer();
             MessageBox.Show(customer.CustomerId.ToString());
         }
 
@@ -42,6 +44,18 @@ namespace Marubo.UserControls
             TbZip.Text = customer.LocationZip.ToString();
             TbPhone.Text = customer.Phone;
             TbEmail.Text = customer.Email;
+        }
+
+        private void UpdateCustomer()
+        {
+            Customer customer = new Customer();
+            customer.FirstName = TbFirstName.Text;
+            customer.LastName = TbLastName.Text;
+            customer.Adress = TbAdress.Text;
+            customer.LocationZip = int.Parse(TbZip.Text);
+            customer.Phone = TbPhone.Text;
+            customer.Email = TbEmail.Text;
+            dbHandler.UpdateCustomer(customer);
         }
     }
 }

@@ -15,7 +15,6 @@
             <TextBox x:Name="TbFirstName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Fornavn" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5" FontSize="16"/>
             <TextBox x:Name="TbLastName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Efternavn" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5" FontSize="16"/>
             <TextBox x:Name="TbAdress" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Adresse" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5" FontSize="16"/>
-            <TextBox x:Name="TbZip" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Postnummer" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5" FontSize="16"/>
             <TextBox x:Name="TbPhone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Telefon" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5" FontSize="16"/>
             <TextBox x:Name="TbEmail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Email" Foreground="{StaticResource PrimaryTextColor}" Margin="0,5,0,5" FontSize="16"/>
             <Button x:Name="BtnEditUser" Content="Rediger" Click="BtnEditUser_Click" Style="{StaticResource MaterialDesignRaisedButton}" Foreground="{StaticResource PrimaryTextColor}" Margin="0,10,0,0" FontSize="16"/>
