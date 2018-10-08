@@ -8,8 +8,8 @@ namespace Marubo.Interfaces
 {
     interface IDatabaseHandler
     {
-        void ConnectToDatabase();
         void InsertIntoCustomerDatabase(Customer customer);
         Customer GetCustomer(string email);
+        void UpdateCustomer(Customer customer);
     }
 }
