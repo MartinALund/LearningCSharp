@@ -43,14 +43,20 @@ namespace Marubo.UserControls
                 if (BCrypt.Net.BCrypt.Verify(password, fetchedCustomer.Password))
                 {
                     Constants.loggedInCustomer = fetchedCustomer;
+                    dbHandler.ResetFailedLoginAttempts(fetchedCustomer);
                     MainWindow main = new MainWindow();
                     main.Show();
                     authWindow.Hide();
                 }
                 else
                 {
-                    // Wrong password!
+                    dbHandler.UpdateFailedLoginAttempts(fetchedCustomer);
                     MessageBox.Show("Wrong information entered, try again!");
+
+                    if(fetchedCustomer.FailedLoginAttempts > 2)
+                    {
+                        MessageBox.Show("Du har brugt 3 forkerte forsøg, prøv igen senere!");
+                    }
                 }
             }
             else

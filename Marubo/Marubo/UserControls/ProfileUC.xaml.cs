@@ -41,7 +41,6 @@ namespace Marubo.UserControls
             TbFirstName.Text = customer.FirstName;
             TbLastName.Text = customer.LastName;
             TbAdress.Text = customer.Adress;
-            TbZip.Text = customer.LocationZip.ToString();
             TbPhone.Text = customer.Phone;
             TbEmail.Text = customer.Email;
         }
@@ -52,7 +51,6 @@ namespace Marubo.UserControls
             customer.FirstName = TbFirstName.Text;
             customer.LastName = TbLastName.Text;
             customer.Adress = TbAdress.Text;
-            customer.LocationZip = int.Parse(TbZip.Text);
             customer.Phone = TbPhone.Text;
             customer.Email = TbEmail.Text;
             dbHandler.UpdateCustomer(customer);

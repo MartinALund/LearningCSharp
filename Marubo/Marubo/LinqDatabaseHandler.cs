@@ -53,5 +53,19 @@ namespace Marubo
             db.SubmitChanges();
             Constants.loggedInCustomer = loggedInCustomer;
         }
+
+        public void UpdateFailedLoginAttempts(Customer customer)
+        {
+            var loggedInCustomer = db.Customers.Single(x => x.CustomerId == customer.CustomerId);
+            loggedInCustomer.FailedLoginAttempts = loggedInCustomer.FailedLoginAttempts + 1;
+            db.SubmitChanges();
+        }
+
+        public void ResetFailedLoginAttempts(Customer customer)
+        {
+            var loggedInCustomer = db.Customers.Single(x => x.CustomerId == customer.CustomerId);
+            loggedInCustomer.FailedLoginAttempts = 0;
+            db.SubmitChanges();
+        }
     }
 }
