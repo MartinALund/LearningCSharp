@@ -33,5 +33,16 @@ namespace Marubo.Properties {
                 return ((string)(this["maruboConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=marubo.database.windows.net;Initial Catalog=marubo;Persist Security I" +
+            "nfo=True;User ID=maruboadmin")]
+        public string maruboConnectionString1 {
+            get {
+                return ((string)(this["maruboConnectionString1"]));
+            }
+        }
     }
 }

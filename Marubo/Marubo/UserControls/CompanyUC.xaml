@@ -8,6 +8,25 @@
              Padding="25"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBox Text="ComapanyUC" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ListView Margin="10" Name="lvDataBinding">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Virksomhed: " FontWeight="Bold" />
+                            <TextBlock Text="{Binding CompanyName}"  />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Adresse: " FontWeight="Bold"  />
+                            <TextBlock Text="{Binding Adress}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Telefon: " FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Phone}" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

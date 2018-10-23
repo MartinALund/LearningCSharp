@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="marubo" Class="MaruboDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=marubo.database.windows.net;Initial Catalog=marubo;Persist Security Info=True;User ID=maruboadmin" SettingsObjectName="Marubo.Properties.Settings" SettingsPropertyName="maruboConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=marubo.database.windows.net;Initial Catalog=marubo;Persist Security Info=True;User ID=maruboadmin" SettingsObjectName="Marubo.Properties.Settings" SettingsPropertyName="maruboConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Company" Member="Companies">
     <Type Name="Company">
       <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -20,7 +20,7 @@
       <Column Name="Packaging" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
       <Column Name="Barcode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="Product_CompanyProduct" Member="CompanyProducts" ThisKey="ProductId" OtherKey="ProductId" Type="CompanyProduct" />
-      <Association Name="Product_InvoiceItem" Member="InvoiceItems" ThisKey="ProductId" OtherKey="ProductId" Type="InvoiceItem" />
+      <Association Name="Product_OrderItem" Member="OrderItems" ThisKey="ProductId" OtherKey="ProductId" Type="OrderItem" />
     </Type>
   </Table>
   <Table Name="dbo.CompanyEmployee" Member="CompanyEmployees">
@@ -39,6 +39,7 @@
       <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="IsDiscontinued" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="QuantityInStock" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Company_CompanyProduct" Member="Company" ThisKey="CompanyId" OtherKey="CompanyId" Type="Company" IsForeignKey="true" />
       <Association Name="Product_CompanyProduct" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
     </Type>
@@ -54,7 +55,7 @@
       <Column Name="Email" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="FailedLoginAttempts" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Customer_Invoice" Member="Invoices" ThisKey="CustomerId" OtherKey="CustomerId" Type="Invoice" />
+      <Association Name="Customer_Order" Member="Orders" ThisKey="CustomerId" OtherKey="CustomerId" Type="Order" />
       <Association Name="Location_Customer" Member="Location" ThisKey="LocationZip" OtherKey="Zip" Type="Location" IsForeignKey="true" />
     </Type>
   </Table>
@@ -70,26 +71,6 @@
       <Association Name="Employee_CompanyEmployee" Member="CompanyEmployees" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="CompanyEmployee" />
     </Type>
   </Table>
-  <Table Name="dbo.Invoice" Member="Invoices">
-    <Type Name="Invoice">
-      <Column Name="InvoiceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="OrderDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
-      <Association Name="Invoice_InvoiceItem" Member="InvoiceItems" ThisKey="InvoiceId" OtherKey="InvoiceId" Type="InvoiceItem" />
-      <Association Name="Customer_Invoice" Member="Customer" ThisKey="CustomerId" OtherKey="CustomerId" Type="Customer" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.InvoiceItem" Member="InvoiceItems">
-    <Type Name="InvoiceItem">
-      <Column Name="InvoiceItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="InvoiceId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Invoice_InvoiceItem" Member="Invoice" ThisKey="InvoiceId" OtherKey="InvoiceId" Type="Invoice" IsForeignKey="true" />
-      <Association Name="Product_InvoiceItem" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Location" Member="Locations">
     <Type Name="Location">
       <Column Name="Zip" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -97,6 +78,26 @@
       <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="Location_Company" Member="Companies" ThisKey="Zip" OtherKey="LocationZip" Type="Company" />
       <Association Name="Location_Customer" Member="Customers" ThisKey="Zip" OtherKey="LocationZip" Type="Customer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Association Name="Order_OrderItem" Member="OrderItems" ThisKey="OrderId" OtherKey="OrderId" Type="OrderItem" />
+      <Association Name="Customer_Order" Member="Customer" ThisKey="CustomerId" OtherKey="CustomerId" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderItem" Member="OrderItems">
+    <Type Name="OrderItem">
+      <Column Name="OrderItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Order_OrderItem" Member="Order" ThisKey="OrderId" OtherKey="OrderId" Type="Order" IsForeignKey="true" />
+      <Association Name="Product_OrderItem" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

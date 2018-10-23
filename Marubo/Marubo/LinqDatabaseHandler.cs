@@ -32,8 +32,17 @@ namespace Marubo
 
         public List<Product> GetProducts()
         {
-            List<Product> products = db.Products.ToList();
-            return products;
+            return db.Products.ToList();
+        }
+
+        public List<Company> GetCompanies()
+        {
+            return db.Companies.ToList();
+        }
+
+        public List<Order> GetOrders()
+        {
+            return db.Orders.ToList();
         }
 
         public void InsertIntoCustomerDatabase(Customer customer)

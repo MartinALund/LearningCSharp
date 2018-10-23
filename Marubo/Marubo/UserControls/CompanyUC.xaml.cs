@@ -15,14 +15,15 @@ using System.Windows.Shapes;
 
 namespace Marubo.UserControls
 {
-    /// <summary>
-    /// Interaction logic for CompanyUC.xaml
-    /// </summary>
     public partial class CompanyUC : UserControl
     {
+        LinqDatabaseHandler dbHandler = new LinqDatabaseHandler();
+        List<Company> companies;
         public CompanyUC()
         {
-            InitializeComponent();
-        }
+            companies = dbHandler.GetCompanies();
+            InitializeComponent();         
+            lvDataBinding.ItemsSource = companies;          
+        }    
     }
 }

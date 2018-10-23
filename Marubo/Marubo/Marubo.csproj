@@ -114,6 +114,7 @@
     </Compile>
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\FadingContentControl.cs" />
+    <Compile Include="Utils\StringExtensions.cs" />
     <Page Include="AuthenticationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
