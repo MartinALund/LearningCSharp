@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -89,6 +90,22 @@ namespace Marubo
             AuthenticationWindow authWindow = new AuthenticationWindow();
             this.Close();
             authWindow.Show();
+        }
+
+        private void GridMenu_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ButtonCloseMenu.Visibility = Visibility.Visible;
+            ButtonOpenMenu.Visibility = Visibility.Collapsed;
+            ButtonOpenMenu.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+
+        }
+
+        private void GridMenu_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ButtonCloseMenu.Visibility = Visibility.Collapsed;
+            ButtonOpenMenu.Visibility = Visibility.Visible;
+            ButtonCloseMenu.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+
         }
     }
 }
